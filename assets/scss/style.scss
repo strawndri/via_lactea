@@ -1,0 +1,68 @@
+@use 'fonts' as f;
+@use 'colors' as c;
+
+body {
+    background-color: c.$color-default__white;
+}
+
+@mixin title {
+    margin: 0 1em;
+
+    color: c.$color-secondary__light;
+    font-family: f.$font-title;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    background-color: c.$color-primary__medium;
+    height: 6em;
+    width: 100%;
+}
+
+.header__content {
+
+    h1 {
+        @include title;
+        font-variant: small-caps;
+        font-size: 2.8em;
+        margin-top: .4em;
+    }
+
+    h2 {
+        @include title;
+        font-size: 1em;
+        text-align: right;
+    }
+}
+
+.acessibility__buttons {
+
+    display: flex;
+    text-align: right;
+}
+
+.button-icon {
+    width: 2em;
+    padding: .5em .5em 1.2em .5em;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    margin-right: 2em;
+    background-color: c.$color-secondary__light;
+    transition: .5s;
+
+    svg {
+        fill: c.$color-primary__medium;
+    }
+
+}
+
+
+.button-icon:hover {
+    background-color: rgba(c.$color-secondary__light, 0.8);
+    cursor: pointer;
+}
+

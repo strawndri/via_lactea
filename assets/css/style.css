@@ -1,4 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
 body {
-  background-color: red;
+  background-color: #f9f9f9;
 }
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #314657;
+  height: 6em;
+  width: 100%;
+}
+
+.header__content h1 {
+  margin: 0 1em;
+  color: #C5C5C5;
+  font-family: "Playfair Display", serif;
+  font-variant: small-caps;
+  font-size: 2.8em;
+  margin-top: 0.4em;
+}
+.header__content h2 {
+  margin: 0 1em;
+  color: #C5C5C5;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  text-align: right;
+}
+
+.acessibility__buttons {
+  display: flex;
+  text-align: right;
+}
+
+.button-icon {
+  width: 2em;
+  padding: 0.5em 0.5em 1.2em 0.5em;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  margin-right: 2em;
+  background-color: #C5C5C5;
+  transition: 0.5s;
+}
+.button-icon svg {
+  fill: #314657;
+}
+
+.button-icon:hover {
+  background-color: rgba(197, 197, 197, 0.8);
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,5 @@
+sass --watch assets/scss/style.scss:assets/css/style.css
+
 Olavo Brás Martins dos Guimarães Bilac nasceu no Rio de Janeiro (1865). Foi (e ainda é) um dois mais
 valorosos escritores da Literatura Brasileira, participando, por exemplo, do movimento denominado
 "Parnasianismo".
