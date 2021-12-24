@@ -1,68 +1,78 @@
 @use 'fonts' as f;
 @use 'colors' as c;
 
+
 body {
     background-color: c.$color-default__white;
 }
 
 @mixin title {
-    margin: 0 1em;
-
-    color: c.$color-secondary__light;
     font-family: f.$font-title;
+    color: c.$color-secondary__light;
 }
 
+
 .header {
-    position: fixed;
+    
     display: flex;
+    position: fixed;
     align-items: flex-start;
     justify-content: space-between;
 
-    background-color: c.$color-primary__medium;
     height: 6em;
     width: 100%;
+    
+    background-color: c.$color-primary__medium;
 }
 
-.header__content {
+.title-block {
+
+    width: 27em;
+    padding: 1em 1em;
 
     h1 {
         @include title;
+        font-size: 2.5em;
         font-variant: small-caps;
-        font-size: 2.8em;
-        margin-top: .4em;
     }
 
     h2 {
         @include title;
-        font-size: 1em;
+        font-size: .8em;
         text-align: right;
     }
 }
 
-.acessibility__buttons {
+.buttons-block{
 
     display: flex;
+    padding: 0 1em;
     text-align: right;
-}
 
-.button-icon {
-    width: 2em;
-    padding: .5em .5em 1.2em .5em;
-    border-radius: 0 0 20px 20px;
-    text-align: center;
-    margin-right: 2em;
-    background-color: c.$color-secondary__light;
-    transition: .5s;
+    .button-icon {
 
-    svg {
-        fill: c.$color-primary__medium;
+        width: 2em;
+        padding: .5em;
+        margin-left: .5em;
+
+        background-color: c.$color-secondary__light;
+        border-radius: 0 0 20px 20px;
+        
+        text-align: center;
+        
+        transition: .5s;
+
+        svg {
+            fill: c.$color-primary__medium;
+        }
+
+        &:hover {
+            
+            background-color: rgba(c.$color-secondary__light, 0.8);
+            
+            cursor: pointer;
+            transform: translate(0, 5px);
+
+        }
     }
-
 }
-
-
-.button-icon:hover {
-    background-color: rgba(c.$color-secondary__light, 0.8);
-    cursor: pointer;
-}
-
