@@ -57,4 +57,9 @@ body {
   transform: translate(0, 5px);
 }
 
+.information {
+  padding-top: 8em;
+  background: #314657 url("../img/galaxy-background.jpg") center/cover no-repeat fixed;
+}
+
 /*# sourceMappingURL=style.css.map */
