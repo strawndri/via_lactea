@@ -9,8 +9,8 @@ body {
 @mixin title {
     font-family: f.$font-title;
     color: c.$color-secondary__light;
+    text-shadow: 3px 3px 2px rgba(c.$color-default__black, 0.5);
 }
-
 
 .header {
     
@@ -23,6 +23,7 @@ body {
     width: 100%;
     
     background-color: c.$color-primary__medium;
+    box-shadow: 2px 1px 10px 2px rgba(c.$color-default__black, 0.5);
 }
 
 .title-block {

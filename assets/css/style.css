@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
 body {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 
 .header {
@@ -12,6 +12,7 @@ body {
   height: 6em;
   width: 100%;
   background-color: #314657;
+  box-shadow: 2px 1px 10px 2px rgba(41, 41, 41, 0.5);
 }
 
 .title-block {
@@ -21,12 +22,14 @@ body {
 .title-block h1 {
   font-family: "Playfair Display", serif;
   color: #C5C5C5;
+  text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
   font-size: 2.5em;
   font-variant: small-caps;
 }
 .title-block h2 {
   font-family: "Playfair Display", serif;
   color: #C5C5C5;
+  text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
   font-size: 0.8em;
   text-align: right;
 }
