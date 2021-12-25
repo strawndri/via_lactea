@@ -24,6 +24,8 @@ body {
     
     background-color: c.$color-primary__medium;
     box-shadow: 2px 1px 10px 2px rgba(c.$color-default__black, 0.5);
+
+    z-index: 1;
 }
 
 .title-block {
@@ -93,10 +95,35 @@ body {
 
 
 .information {
-    padding-top: 8em;
+    display: flex;
+    padding: 8em 8em 2em 8em;
     background: c.$color-primary__medium url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
+
+    .first-info, .second-info {
+        width: 60%;
+        background-color: rgba(c.$color-secondary__light, 0.5);
+        padding: 1em 8em 1em 1em;
+        border-radius: 18px;
+        margin: 0 1em 2em 0;
+
+        font-family: f.$font-regular;
+        color: c.$color-primary__dark;
+        line-height: 1.5em;
+
+    }
+
+    img {
+
+        position: absolute;
+        top: auto;
+        left: 60%;
+
+        width: 12em;
+        border-radius: 18px;
+        box-shadow: 11px 8px 0px 2px rgba(c.$color-default__black, 0.5);
+    }
 }
 
-.poem {
+// .poem {
 
-}
+// }
