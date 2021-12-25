@@ -52,11 +52,14 @@ body {
 
     .button-icon {
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 2em;
-        padding: .5em;
+        padding: .2em .5em .5em .5em;
         margin-left: .5em;
 
-        background-color: c.$color-secondary__light;
         border-radius: 0 0 20px 20px;
         
         text-align: center;
@@ -69,12 +72,22 @@ body {
 
         &:hover {
             
-            background-color: rgba(c.$color-secondary__light, 0.8);
+            background-color: rgba(c.$color-secondary__light, 0.6);
             
             cursor: pointer;
             transform: translate(0, 5px);
 
         }
+    }
+
+    .light-mode, .dark-mode {
+        background-color: c.$color-secondary__medium;
+        height: 2.5em;
+    }
+
+    .font-up, .font-down {
+        background-color: c.$color-secondary__light;
+        height: 2em;
     }
 }
 
