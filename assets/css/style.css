@@ -25,7 +25,7 @@ body {
   color: #C5C5C5;
   text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
   padding-bottom: 0.2em;
-  font-size: 1.8em;
+  font-size: 1.6rem;
   font-variant: small-caps;
 }
 .title-block h2 {
@@ -40,6 +40,20 @@ body {
   display: flex;
   padding: 0 1em;
   text-align: right;
+}
+.buttons-block .button-accessibility {
+  margin: 1em;
+  background-color: #C5C5C5;
+  padding: 0.9em 1em;
+  border-radius: 100px;
+  transition: 0.5s;
+}
+.buttons-block .button-accessibility svg {
+  fill: #314657;
+}
+.buttons-block .button-accessibility:hover {
+  background-color: rgba(197, 197, 197, 0.6);
+  cursor: pointer;
 }
 .buttons-block .button-icon {
   display: flex;
@@ -59,6 +73,9 @@ body {
   background-color: rgba(197, 197, 197, 0.6);
   cursor: pointer;
   transform: translate(0, 5px);
+}
+.buttons-block .hidden {
+  display: none;
 }
 .buttons-block .light-mode, .buttons-block .dark-mode {
   background-color: #9A9A9A;

@@ -1,5 +1,11 @@
 @use "breakpoints" as bp;
 
+@mixin sm {
+    @media screen and (min-width: bp.$screen-sm-min) {
+        @content;
+    }
+}
+
 @mixin md {
     @media screen and (min-width: bp.$screen-md-min) {
         @content;
