@@ -24,7 +24,8 @@ body {
   font-family: "Playfair Display", serif;
   color: #C5C5C5;
   text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
-  font-size: 2.5em;
+  padding-bottom: 0.2em;
+  font-size: 1.8em;
   font-variant: small-caps;
 }
 .title-block h2 {
@@ -32,7 +33,7 @@ body {
   color: #C5C5C5;
   text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
   font-size: 0.8em;
-  text-align: right;
+  text-align: left;
 }
 
 .buttons-block {
@@ -44,7 +45,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2em;
+  width: 1.8em;
   padding: 0.2em 0.5em 0.5em 0.5em;
   margin-left: 0.5em;
   border-radius: 0 0 20px 20px;

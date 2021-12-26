@@ -1,5 +1,5 @@
-@use 'fonts' as f;
-@use 'colors' as c;
+@use 'helpers/fonts' as f;
+@use 'helpers/colors' as c;
 
 
 body {
@@ -35,14 +35,16 @@ body {
 
     h1 {
         @include title;
-        font-size: 2.5em;
+
+        padding-bottom: .2em;
+        font-size: 1.8em;
         font-variant: small-caps;
     }
 
     h2 {
         @include title;
         font-size: .8em;
-        text-align: right;
+        text-align: left;
     }
 }
 
@@ -58,7 +60,7 @@ body {
         justify-content: center;
         align-items: center;
 
-        width: 2em;
+        width: 1.8em;
         padding: .2em .5em .5em .5em;
         margin-left: .5em;
 
