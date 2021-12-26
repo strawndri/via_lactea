@@ -1,0 +1,26 @@
+@use "breakpoints" as bp;
+
+@mixin md {
+    @media screen and (min-width: bp.$screen-md-min) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: bp.$screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin xlg {
+    @media screen and (min-width: bp.$screen-xlg-min) {
+        @content;
+    }
+}
+
+@mixin xxlg {
+    @media screen and (min-width: bp.$screen-xxlg-min) {
+        @content;
+    }
+}
+
