@@ -6,8 +6,8 @@ body {
 
 .header {
   display: flex;
-  position: fixed;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   height: 6em;
   width: 100%;
@@ -15,10 +15,12 @@ body {
   box-shadow: 2px 1px 10px 2px rgba(41, 41, 41, 0.5);
   z-index: 1;
 }
+.header .header__content {
+  margin: 1em 2em;
+}
 
 .title-block {
   width: 27em;
-  padding: 1em 1em;
 }
 .title-block h1 {
   font-family: "Playfair Display", serif;
@@ -38,11 +40,12 @@ body {
 
 .buttons-block {
   display: flex;
-  padding: 0 1em;
-  text-align: right;
+  align-items: center;
+  background-color: rgba(80, 117, 143, 0.5);
+  padding: 0.5em;
+  border-radius: 150px;
 }
 .buttons-block .button-accessibility {
-  margin: 1em;
   background-color: #C5C5C5;
   padding: 0.9em 1em;
   border-radius: 100px;
@@ -52,38 +55,25 @@ body {
   fill: #314657;
 }
 .buttons-block .button-accessibility:hover {
-  background-color: rgba(197, 197, 197, 0.6);
+  background-color: rgba(197, 197, 197, 0.8);
   cursor: pointer;
 }
 .buttons-block .button-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   width: 1.8em;
-  padding: 0.2em 0.5em 0.5em 0.5em;
-  margin-left: 0.5em;
-  border-radius: 0 0 20px 20px;
-  text-align: center;
-  transition: 0.5s;
+  height: 1.8em;
+  background-color: rgba(197, 197, 197, 0.8);
+  padding: 0.5em;
+  margin-left: 0.8em;
+  border-radius: 100px;
 }
 .buttons-block .button-icon svg {
   fill: #314657;
 }
-.buttons-block .button-icon:hover {
-  background-color: rgba(197, 197, 197, 0.6);
-  cursor: pointer;
-  transform: translate(0, 5px);
-}
-.buttons-block .hidden {
-  display: none;
-}
-.buttons-block .light-mode, .buttons-block .dark-mode {
-  background-color: #9A9A9A;
-  height: 2.5em;
-}
-.buttons-block .font-up, .buttons-block .font-down {
-  background-color: #C5C5C5;
-  height: 2em;
+.buttons-block .able {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .information {

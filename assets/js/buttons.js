@@ -1,16 +1,14 @@
+const btnAccessibility = document.getElementById("btnAccessibility");
+// const titleElement = document.getElementById("titleBlock");
+const btnElements = document.querySelectorAll(".button-icon")
 
-const btnElement = document.getElementById("btnAccessibility");
-const titleElement = document.getElementById("titleBlock");
-const btnElements = document.querySelectorAll(".hidden")
-
-console.log(btnElements)
 function showButtons() {
 
-    for (var i = 0; i <= btnElements.length; i++) {
-        btnElements[i].classList.remove('hidden');
+    for (var i = 0; i < btnElements.length; i++) {
+
+        btnElements[i].classList.toggle('able')
     }
 
-    titleElement.classList.add('hidden');
 }
 
-btnElement.addEventListener('click', showButtons);
+btnAccessibility.addEventListener('click', showButtons);

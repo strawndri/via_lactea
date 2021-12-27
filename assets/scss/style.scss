@@ -2,35 +2,39 @@
 @use 'helpers/colors' as c;
 
 body {
-    background-color: c.$color-default__white;
+    background-color: c.$default__white;
 }
 
 @mixin title {
     font-family: f.$font-title;
-    color: c.$color-secondary__light;
-    text-shadow: 3px 3px 2px rgba(c.$color-default__black, 0.5);
+    color: c.$secondary__light-grey;
+    text-shadow: 3px 3px 2px rgba(c.$default__black, 0.5);
 }
 
 .header {
-    
+
     display: flex;
-    position: fixed;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 
     height: 6em;
     width: 100%;
     
-    background-color: c.$color-primary__medium;
-    box-shadow: 2px 1px 10px 2px rgba(c.$color-default__black, 0.5);
+    background-color: c.$primary__medium-blue;
+    box-shadow: 2px 1px 10px 2px rgba(c.$default__black, 0.5);
 
     z-index: 1;
+
+    .header__content {
+        margin: 1em 2em;
+    }
+
 }
 
 .title-block {
 
     width: 27em;
-    padding: 1em 1em;
 
     h1 {
         @include title;
@@ -50,69 +54,47 @@ body {
 .buttons-block{
 
     display: flex;
-    padding: 0 1em;
-    text-align: right;
+    align-items: center;
+    background-color: rgba(c.$secondary__light-blue, 0.5);
+    padding: .5em;
+    border-radius: 150px;
 
     .button-accessibility {
-        margin: 1em;
-        background-color: c.$color-secondary__light;
+        background-color: c.$secondary__light-grey;
         padding: .9em 1em;
         border-radius: 100px;
         transition: .5s;
 
         svg {
-            fill: c.$color-primary__medium;
+            fill: c.$primary__medium-blue;
         }
 
         &:hover {
-            background-color: rgba(c.$color-secondary__light, 0.6);
+            background-color: rgba(c.$secondary__light-grey, 0.8);
             cursor: pointer;
+            // padding: .6em .7em;
         }
     }
 
     .button-icon {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+        
+        display: none;
         width: 1.8em;
-        padding: .2em .5em .5em .5em;
-        margin-left: .5em;
-
-        border-radius: 0 0 20px 20px;
-        
-        text-align: center;
-        
-        transition: .5s;
+        height: 1.8em;        
+        background-color: rgba(c.$secondary__light-grey, 0.8);
+        padding: .5em;
+        margin-left: .8em;
+        border-radius: 100px;
 
         svg {
-            fill: c.$color-primary__medium;
+            fill: c.$primary__medium-blue;
         }
-
-        &:hover {
-            
-            background-color: rgba(c.$color-secondary__light, 0.6);
-            
-            cursor: pointer;
-            transform: translate(0, 5px);
-
-        }
-
     }
 
-    .hidden {
-        display: none;
-    }
-
-    .light-mode, .dark-mode {
-        background-color: c.$color-secondary__medium;
-        height: 2.5em;
-    }
-
-    .font-up, .font-down {
-        background-color: c.$color-secondary__light;
-        height: 2em;
+    .able {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -120,17 +102,17 @@ body {
 .information {
     display: flex;
     padding: 8em 8em 2em 8em;
-    background: c.$color-primary__medium url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
+    background: c.$primary__medium-blue url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
 
     .first-info, .second-info {
         width: 60%;
-        background-color: rgba(c.$color-secondary__light, 0.5);
+        background-color: rgba(c.$secondary__light-grey, 0.5);
         padding: 1em 8em 1em 1em;
         border-radius: 18px;
         margin: 0 1em 2em 0;
 
         font-family: f.$font-regular;
-        color: c.$color-primary__dark;
+        color: c.$primary__dark-blue;
         line-height: 1.5em;
 
     }
@@ -143,7 +125,7 @@ body {
 
         width: 12em;
         border-radius: 18px;
-        box-shadow: 11px 8px 0px 2px rgba(c.$color-default__black, 0.5);
+        box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
     }
 }
 
