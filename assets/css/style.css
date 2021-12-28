@@ -59,6 +59,9 @@ body {
   cursor: pointer;
 }
 
+.toggle-button {
+  display: none;
+}
 .toggle-button input {
   opacity: 0;
   position: absolute;

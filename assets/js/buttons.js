@@ -1,5 +1,5 @@
 const btnAccessibility = document.getElementById("btnAccessibility");
-const btnElements = document.querySelectorAll(".btn-icon")
+const btnElements = document.querySelectorAll(".btn")
 
 
 btnAccessibility.addEventListener('click', () => {
