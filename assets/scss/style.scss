@@ -127,11 +127,15 @@ body {
             padding: .2em;
             border-radius: 100%;
             transition: transform .3s linear;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
     #checkbox:checked + label .ball {
-        transform: translateX(40px);
+        transform: translateX(40px); 
     }
 }
 
@@ -144,13 +148,19 @@ body {
     padding: .5em;
     margin-left: .8em;
     border-radius: 100%;
+    transition: .5s;
 
     svg {
         fill: c.$primary__medium-blue;
     }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(c.$secondary__light-grey, 1);
+    }
 }
 
-.active {
+.enabled {
     display: flex;
     align-items: center;
     justify-content: center;

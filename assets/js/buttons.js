@@ -6,7 +6,7 @@ btnAccessibility.addEventListener('click', () => {
 
     for (var i = 0; i < btnElements.length; i++) {
 
-        btnElements[i].classList.toggle('active')
+        btnElements[i].classList.toggle('enabled')
     }
 
 });

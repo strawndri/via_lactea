@@ -104,6 +104,9 @@ body {
   border-radius: 100%;
   transition: transform 0.3s linear;
 }
+.toggle-button label .ball:hover {
+  cursor: pointer;
+}
 .toggle-button #checkbox:checked + label .ball {
   transform: translateX(40px);
 }
@@ -116,12 +119,17 @@ body {
   padding: 0.5em;
   margin-left: 0.8em;
   border-radius: 100%;
+  transition: 0.5s;
 }
 .btn-icon svg {
   fill: #314657;
 }
+.btn-icon:hover {
+  cursor: pointer;
+  background-color: #c5c5c5;
+}
 
-.active {
+.enabled {
   display: flex;
   align-items: center;
   justify-content: center;
