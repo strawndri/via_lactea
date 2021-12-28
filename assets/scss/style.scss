@@ -58,6 +58,7 @@ body {
     background-color: rgba(c.$secondary__light-blue, 0.5);
     padding: .5em;
     border-radius: 150px;
+
 }
 
 .btn-accessibility {
@@ -67,12 +68,27 @@ body {
 
     svg {
         fill: c.$primary__medium-blue;
+        transform: scale(1.2);
     }
 
     &:hover {
         background-color: rgba(c.$secondary__light-grey, 0.8);
         cursor: pointer;
-        // padding: .6em .7em;
+
+        svg {
+            animation: move-men .5s ease-in;
+        }
+
+        @keyframes move-men{
+
+            from {
+                transform: scale(1.5);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
     }
 }
 
