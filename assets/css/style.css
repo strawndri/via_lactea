@@ -4,6 +4,18 @@ body {
   background-color: #f2f2f2;
 }
 
+body::-webkit-scrollbar {
+  background-color: #c5c5c5;
+  width: 0.6em;
+  outline: 1px solid rgba(32, 46, 57, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #50758F;
+  box-shadow: inset 3px 3px 5px rgba(41, 41, 41, 0.3);
+  border-radius: 10px;
+}
+
 .header {
   display: flex;
   flex-direction: row;

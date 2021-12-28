@@ -5,6 +5,18 @@ body {
     background-color: c.$default__white;
 }
 
+body::-webkit-scrollbar {
+    background-color: rgba(c.$secondary__light-grey, 1);
+    width: 0.6em;
+    outline: 1px solid rgba(c.$primary__dark-blue, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: c.$secondary__light-blue;
+    box-shadow: inset 3px 3px 5px rgba(c.$default__black, 0.3);
+    border-radius: 10px;
+}
+
 @mixin title {
     font-family: f.$font-title;
     color: c.$secondary__light-grey;
