@@ -1,14 +1,19 @@
 const btnAccessibility = document.getElementById("btnAccessibility");
-// const titleElement = document.getElementById("titleBlock");
-const btnElements = document.querySelectorAll(".button-icon")
+const btnElements = document.querySelectorAll(".btn-icon")
 
-function showButtons() {
+
+btnAccessibility.addEventListener('click', () => {
 
     for (var i = 0; i < btnElements.length; i++) {
 
-        btnElements[i].classList.toggle('able')
+        btnElements[i].classList.toggle('active')
     }
 
-}
+});
 
-btnAccessibility.addEventListener('click', showButtons);
+
+const btnCheckBox = document.getElementById("checkbox");
+
+btnCheckBox.addEventListener("change", () => {
+    console.log("foi!")
+})

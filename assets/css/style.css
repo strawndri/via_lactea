@@ -45,32 +45,68 @@ body {
   padding: 0.5em;
   border-radius: 150px;
 }
-.buttons-block .button-accessibility {
+
+.btn-accessibility {
   background-color: #C5C5C5;
   padding: 0.9em 1em;
   border-radius: 100px;
-  transition: 0.5s;
 }
-.buttons-block .button-accessibility svg {
+.btn-accessibility svg {
   fill: #314657;
 }
-.buttons-block .button-accessibility:hover {
+.btn-accessibility:hover {
   background-color: rgba(197, 197, 197, 0.8);
   cursor: pointer;
 }
-.buttons-block .button-icon {
+
+.toggle-button input {
+  opacity: 0;
+  position: absolute;
+}
+.toggle-button label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 4.5em;
+  padding: 0.5em;
+  height: 1.8em;
+  margin-left: 0.8em;
+  border-radius: 15em;
+  background-color: rgba(197, 197, 197, 0.8);
+}
+.toggle-button label svg {
+  width: 10em;
+  fill: #314657;
+}
+.toggle-button label .ball {
+  position: absolute;
+  background-color: rgba(197, 197, 197, 0.8);
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0.2em;
+  border-radius: 100%;
+  transition: transform 0.3s linear;
+}
+.toggle-button #checkbox:checked + label .ball {
+  transform: translateX(40px);
+}
+
+.btn-icon {
   display: none;
   width: 1.8em;
   height: 1.8em;
   background-color: rgba(197, 197, 197, 0.8);
   padding: 0.5em;
   margin-left: 0.8em;
-  border-radius: 100px;
+  border-radius: 100%;
 }
-.buttons-block .button-icon svg {
+.btn-icon svg {
   fill: #314657;
 }
-.buttons-block .able {
+
+.active {
   display: flex;
   align-items: center;
   justify-content: center;
