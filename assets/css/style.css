@@ -109,12 +109,12 @@ body::-webkit-scrollbar-thumb {
 }
 .toggle-button label .ball {
   position: absolute;
-  background-color: rgba(197, 197, 197, 0.8);
+  background-color: #314657;
   width: 1.8em;
   height: 1.8em;
   padding: 0.2em;
   border-radius: 100%;
-  transition: transform 0.3s linear;
+  transition: transform 0.25s linear;
 }
 .toggle-button label .ball:hover {
   cursor: pointer;
