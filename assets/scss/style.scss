@@ -1,13 +1,15 @@
-@use 'helpers/fonts' as f;
-@use 'helpers/colors' as c;
+@use "helpers/fonts" as f;
+@use "helpers/colors" as c;
+@use "helpers/_mixins-responsive.scss" as responsive;
 
 body {
     background-color: c.$default__white;
+    font-size: 16px;
 }
 
 body::-webkit-scrollbar {
-    background-color: rgba(c.$secondary__light-grey, 1);
     width: 0.6em;
+    background-color: rgba(c.$secondary__light-grey, 1);
     outline: 1px solid rgba(c.$primary__dark-blue, 0.5);
 }
 
@@ -19,8 +21,8 @@ body::-webkit-scrollbar-thumb {
 
 @mixin title {
     font-family: f.$font-title;
-    color: c.$secondary__light-grey;
     text-shadow: 3px 3px 2px rgba(c.$default__black, 0.5);
+    color: c.$secondary__light-grey;
 }
 
 .header {
@@ -39,7 +41,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 1;
 
     .header__content {
-        margin: 1em 2em;
+        margin: 1em;
     }
 
 }
@@ -50,9 +52,8 @@ body::-webkit-scrollbar-thumb {
 
     h1 {
         @include title;
-
-        padding-bottom: .2em;
-        font-size: 1.6rem;
+        padding-bottom: .4em;
+        font-size: 1.2rem;
         font-variant: small-caps;
     }
 
@@ -61,29 +62,52 @@ body::-webkit-scrollbar-thumb {
         font-size: .8em;
         text-align: left;
     }
+
+    @include responsive.sx {
+        &.hidden {
+            display: none;
+        }
+    };
 }
+
 
 .buttons-block{
 
     display: flex;
     align-items: center;
-    background-color: rgba(c.$secondary__light-blue, 0.5);
+
+    position: absolute;
+    left: 70vw;
+    
     padding: .5em;
     border-radius: 150px;
+    
+    background-color: rgba(c.$secondary__light-blue, 0.5);
+
+    @include responsive.sx {
+
+        &.buttons-enabled {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-55%);
+        }
+    };
 
 }
 
 .btn-accessibility {
-    background-color: c.$secondary__light-grey;
-    padding: .9em 1em;
+
+    padding: .6em .7em;
     border-radius: 100px;
+    background-color: c.$secondary__light-grey;
 
     svg {
         fill: c.$primary__medium-blue;
-        transform: scale(1.2);
+        transform: scale(1);
     }
 
     &:hover {
+
         background-color: rgba(c.$secondary__light-grey, 0.8);
         cursor: pointer;
 
@@ -94,11 +118,11 @@ body::-webkit-scrollbar-thumb {
         @keyframes move-men{
 
             from {
-                transform: scale(1.5);
+                transform: scale(1.2);
             }
 
             to {
-                transform: scale(1.2);
+                transform: scale(1);
             }
         }
     }
@@ -114,16 +138,20 @@ body::-webkit-scrollbar-thumb {
     }
 
     label {
-        position: relative;
+        
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        
+        position: relative;
+        
         width: 4.5em;
-        padding: .5em;
         height: 1.8em;
+        padding: .5em;
         margin-left: .8em;  
         border-radius: 15em;
+        
         background-color:rgba(c.$secondary__light-grey, 0.8);
         
         svg {
@@ -133,11 +161,14 @@ body::-webkit-scrollbar-thumb {
 
         .ball {
             position: absolute;
-            background-color: c.$primary__medium-blue;
+            
             width: 1.8em;
             height: 1.8em;
             padding: .2em;
             border-radius: 100%;
+            
+            background-color: c.$primary__medium-blue;
+            
             transition: transform .25s linear;
 
             &:hover {
@@ -154,12 +185,15 @@ body::-webkit-scrollbar-thumb {
 .btn-icon {
         
     display: none;
+    
     width: 1.8em;
     height: 1.8em;        
-    background-color: rgba(c.$secondary__light-grey, 0.8);
     padding: .5em;
     margin-left: .8em;
     border-radius: 100%;
+    
+    background-color: rgba(c.$secondary__light-grey, 0.8);
+    
     transition: .5s;
 
     svg {
@@ -167,12 +201,12 @@ body::-webkit-scrollbar-thumb {
     }
 
     &:hover {
-        cursor: pointer;
         background-color: rgba(c.$secondary__light-grey, 1);
+        cursor: pointer;
     }
 }
 
-.enabled {
+.buttons-enabled {
     display: flex;
     align-items: center;
     justify-content: center;
