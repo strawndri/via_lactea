@@ -4,11 +4,6 @@
 
 body {
     background-color: c.$default__white;
-    font-size: 16px;
-
-    @include responsive.lg {
-        font-size: 20px;
-    }
 }
 
 body::-webkit-scrollbar {
@@ -46,6 +41,11 @@ body::-webkit-scrollbar-thumb {
 
     @include responsive.sm {
         margin: 1em 0;
+        font-size: .8em;
+    }
+
+    @include responsive.md {
+        font-size: .9em;
     }
 }
 
