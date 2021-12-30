@@ -319,6 +319,30 @@ img {
     }
 }
 
-// .poem {
+// Section poem
 
-// }
+.poem {
+    padding: 2em 0 1em 0;
+
+    div {
+        background-color: rgba(c.$secondary__light-grey, 0.6);
+        padding: 1em 1.5em 1em 2em;
+        margin-bottom: 2em;
+
+        p {
+            font-size: .8em;
+            font-family: f.$font-regular;
+            line-height: 1.8em;
+        }
+    }
+
+    .first-stanza, .third-stanza {
+        margin-right: 2em;
+        border-radius: 0 20px 20px 0;
+    }
+
+    .second-stanza, .fourth-stanza {
+        margin-left: 2em;
+        border-radius: 20px 0 0 20px;
+    }
+}

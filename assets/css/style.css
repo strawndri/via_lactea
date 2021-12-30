@@ -285,4 +285,26 @@ img {
   }
 }
 
+.poem {
+  padding: 2em 0 1em 0;
+}
+.poem div {
+  background-color: rgba(197, 197, 197, 0.6);
+  padding: 1em 1.5em 1em 2em;
+  margin-bottom: 2em;
+}
+.poem div p {
+  font-size: 0.8em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 1.8em;
+}
+.poem .first-stanza, .poem .third-stanza {
+  margin-right: 2em;
+  border-radius: 0 20px 20px 0;
+}
+.poem .second-stanza, .poem .fourth-stanza {
+  margin-left: 2em;
+  border-radius: 20px 0 0 20px;
+}
+
 /*# sourceMappingURL=style.css.map */
