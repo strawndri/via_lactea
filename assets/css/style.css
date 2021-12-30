@@ -8,6 +8,11 @@ body {
   background-color: #f2f2f2;
   font-size: 16px;
 }
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 20px;
+  }
+}
 
 body::-webkit-scrollbar {
   width: 0.6em;
@@ -182,26 +187,96 @@ body::-webkit-scrollbar-thumb {
 
 .information {
   display: flex;
-  padding: 8em 8em 2em 8em;
+  padding: 2em 1em;
   background: #314657 url("../img/galaxy-background.jpg") center/cover no-repeat fixed;
 }
-.information .first-info, .information .second-info {
-  width: 60%;
-  background-color: rgba(197, 197, 197, 0.5);
-  padding: 1em 8em 1em 1em;
-  border-radius: 18px;
-  margin: 0 1em 2em 0;
-  font-family: "Roboto Slab", Monospace, serif;
-  color: #202E39;
-  line-height: 1.5em;
+@media screen and (min-width: 576px) {
+  .information {
+    padding: 2em 2em;
+  }
 }
-.information img {
+@media screen and (min-width: 768px) {
+  .information {
+    padding: 2em 3em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .information {
+    padding: 2em 5em;
+  }
+}
+
+.information__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.information__box .first-info {
+  padding: 0.8em;
+  border-radius: 18px;
+  font-size: 0.7em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 1.5em;
+  text-indent: 15px;
+  text-align: justify;
+  color: #202E39;
+  background-color: rgba(197, 197, 197, 0.5);
+}
+@media screen and (min-width: 576px) {
+  .information__box .first-info {
+    margin: 1em 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .information__box .first-info {
+    width: 60%;
+    padding-right: 10%;
+  }
+}
+.information__box .second-info {
+  padding: 0.8em;
+  border-radius: 18px;
+  font-size: 0.7em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 1.5em;
+  text-indent: 15px;
+  text-align: justify;
+  color: #202E39;
+  background-color: rgba(197, 197, 197, 0.5);
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .information__box .second-info {
+    margin: 1em 0;
+  }
+}
+@media screen and (min-width: 576px) {
+  .information__box .second-info {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .information__box .second-info {
+    align-self: flex-start;
+    width: 70%;
+  }
+}
+
+img {
+  display: none;
   position: absolute;
   top: auto;
-  left: 60%;
-  width: 12em;
+  left: 80%;
+  width: 7em;
   border-radius: 18px;
   box-shadow: 11px 8px 0px 2px rgba(41, 41, 41, 0.5);
+}
+@media screen and (min-width: 768px) {
+  img {
+    display: inline-block;
+    width: 10em;
+    left: 75%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

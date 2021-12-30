@@ -5,6 +5,10 @@
 body {
     background-color: c.$default__white;
     font-size: 16px;
+
+    @include responsive.lg {
+        font-size: 20px;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -19,11 +23,33 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+// Mixins
+
 @mixin title {
     font-family: f.$font-title;
     text-shadow: 3px 3px 2px rgba(c.$default__black, 0.5);
     color: c.$secondary__light-grey;
 }
+
+@mixin info-paragraph {
+    padding: .8em;
+    border-radius: 18px;
+    
+    font-size: .7em;
+    font-family: f.$font-regular;
+    line-height: 1.5em;
+    text-indent: 15px;
+    text-align: justify;
+    
+    color: c.$primary__dark-blue;
+    background-color: rgba(c.$secondary__light-grey, 0.5);
+
+    @include responsive.sm {
+        margin: 1em 0;
+    }
+}
+
+// Header
 
 .header {
 
@@ -225,33 +251,71 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
+// Section information
+
 .information {
+
     display: flex;
-    padding: 8em 8em 2em 8em;
+    padding: 2em 1em;
     background: c.$primary__medium-blue url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
 
-    .first-info, .second-info {
-        width: 60%;
-        background-color: rgba(c.$secondary__light-grey, 0.5);
-        padding: 1em 8em 1em 1em;
-        border-radius: 18px;
-        margin: 0 1em 2em 0;
-
-        font-family: f.$font-regular;
-        color: c.$primary__dark-blue;
-        line-height: 1.5em;
-
+    @include responsive.sm {
+        padding: 2em 2em;
     }
 
-    img {
+    @include responsive.md {
+        padding: 2em 3em;
+    }
 
-        position: absolute;
-        top: auto;
-        left: 60%;
+    @include responsive.md {
+        padding: 2em 5em;
+    }
+}
 
-        width: 12em;
-        border-radius: 18px;
-        box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
+.information__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .first-info {
+        @include info-paragraph;        
+        @include responsive.md {
+            width: 60%;
+            padding-right: 10%;
+        }
+    }
+    
+    .second-info {
+
+        @include info-paragraph;        
+        display: none;
+    
+        @include responsive.sm {
+            display: block;
+        }
+
+        @include responsive.md {
+            align-self: flex-start;
+            width: 70%;
+        }
+    }
+}
+
+img {
+
+    display: none;
+    position: absolute;
+    top: auto;
+    left: 80%;
+
+    width: 7em;
+    border-radius: 18px;
+    box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
+
+    @include responsive.md {
+        display: inline-block;
+        width: 10em;
+        left: 75%;
     }
 }
 
