@@ -1,7 +1,11 @@
-const btnAccessibility = document.getElementById("btnAccessibility");
-const btnElements = document.querySelectorAll(".btn, .buttons-block")
-const titleBlockElement = document.getElementById("titleBlock")
+// import size from "../scss/helpers/_breakpoints.scss";
 
+const btnAccessibility = document.getElementById("btnAccessibility");
+const btnElements = document.querySelectorAll(".btn");
+const buttonsBlockElement = document.getElementById("buttonsBlock");
+const titleBlockElement = document.getElementById("titleBlock");
+
+var size = 576;
 
 btnAccessibility.addEventListener('click', () => {
 
@@ -10,7 +14,10 @@ btnAccessibility.addEventListener('click', () => {
         btnElements[i].classList.toggle('buttons-enabled')
     }
 
-    titleBlockElement.classList.toggle('hidden')
+    if (window.innerWidth < size) {
+        titleBlockElement.classList.toggle('hidden')
+        buttonsBlockElement.classList.toggle('buttons-enabled')
+    }
 
 });
 
@@ -18,5 +25,5 @@ btnAccessibility.addEventListener('click', () => {
 const btnCheckBox = document.getElementById("checkbox");
 
 btnCheckBox.addEventListener("change", () => {
-    console.log("foi!")
+
 })

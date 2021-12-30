@@ -48,26 +48,33 @@ body::-webkit-scrollbar-thumb {
 
 .title-block {
 
-    width: 27em;
+    width: 17em;
 
     h1 {
         @include title;
         padding-bottom: .4em;
         font-size: 1.2rem;
         font-variant: small-caps;
+
+        @include responsive.sm {
+            font-size: 1.6em;
+            padding-bottom: .2em;
+        }
     }
 
     h2 {
         @include title;
         font-size: .8em;
         text-align: left;
+
+        @include responsive.sm {
+            text-align: right;
+        }
     }
 
-    @include responsive.sx {
-        &.hidden {
-            display: none;
-        }
-    };
+    &.hidden {
+        display: none;
+    }
 }
 
 
@@ -77,20 +84,26 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
 
     position: absolute;
-    left: 70vw;
+    left: 90%;
+    transform: translateX(-90%);
+
     
     padding: .5em;
     border-radius: 150px;
     
     background-color: rgba(c.$secondary__light-blue, 0.5);
 
-    @include responsive.sx {
+    &.buttons-enabled {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-55%);
+    }
 
-        &.buttons-enabled {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-55%);
-        }
+    @include responsive.sm {
+
+        position: initial;
+        transform: translateX(0);
+        
     };
 
 }

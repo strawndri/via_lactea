@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
+:export {
+  screenSmallMin: 576px;
+}
+
 body {
   background-color: #f2f2f2;
   font-size: 16px;
@@ -33,7 +37,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .title-block {
-  width: 27em;
+  width: 17em;
 }
 .title-block h1 {
   font-family: "Playfair Display", serif;
@@ -43,6 +47,12 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.2rem;
   font-variant: small-caps;
 }
+@media screen and (min-width: 576px) {
+  .title-block h1 {
+    font-size: 1.6em;
+    padding-bottom: 0.2em;
+  }
+}
 .title-block h2 {
   font-family: "Playfair Display", serif;
   text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.5);
@@ -50,26 +60,34 @@ body::-webkit-scrollbar-thumb {
   font-size: 0.8em;
   text-align: left;
 }
-@media screen and (max-width: 576px) {
-  .title-block.hidden {
-    display: none;
+@media screen and (min-width: 576px) {
+  .title-block h2 {
+    text-align: right;
   }
+}
+.title-block.hidden {
+  display: none;
 }
 
 .buttons-block {
   display: flex;
   align-items: center;
   position: absolute;
-  left: 70vw;
+  left: 90%;
+  transform: translateX(-90%);
   padding: 0.5em;
   border-radius: 150px;
   background-color: rgba(80, 117, 143, 0.5);
 }
-@media screen and (max-width: 576px) {
-  .buttons-block.buttons-enabled {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-55%);
+.buttons-block.buttons-enabled {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-55%);
+}
+@media screen and (min-width: 576px) {
+  .buttons-block {
+    position: initial;
+    transform: translateX(0);
   }
 }
 

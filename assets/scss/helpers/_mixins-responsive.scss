@@ -1,7 +1,7 @@
 @use "breakpoints" as bp;
 
-@mixin sx {
-    @media screen and (max-width: bp.$screen-sm-min) {
+@mixin sm {
+    @media screen and (min-width: bp.$screen-sm-min) {
         @content;
     }
 }
