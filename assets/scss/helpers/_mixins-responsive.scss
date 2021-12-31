@@ -18,14 +18,14 @@
     }
 }
 
-@mixin xlg {
-    @media screen and (min-width: bp.$screen-xlg-min) {
+@mixin xl {
+    @media screen and (min-width: bp.$screen-xl-min) {
         @content;
     }
 }
 
-@mixin xxlg {
-    @media screen and (min-width: bp.$screen-xxlg-min) {
+@mixin xxl {
+    @media screen and (min-width: bp.$screen-xx-min) {
         @content;
     }
 }

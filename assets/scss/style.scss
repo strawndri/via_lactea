@@ -325,24 +325,61 @@ img {
     padding: 2em 0 1em 0;
 
     div {
-        background-color: rgba(c.$secondary__light-grey, 0.6);
-        padding: 1em 1.5em 1em 2em;
+        display: flex;
+        padding: 1em 0 1em 2em;
         margin-bottom: 2em;
+        background-color: rgba(c.$secondary__light-grey, 0.6);
 
         p {
             font-size: .8em;
             font-family: f.$font-regular;
-            line-height: 1.8em;
+            line-height: 2em;
+
+            @include responsive.md {
+                font-size: .9em;
+            }
+
+            @include responsive.lg {
+                font-size: 1em;
+            }
         }
     }
 
     .first-stanza, .third-stanza {
+        padding: 1em 2em 1em 1em;
+        justify-content: flex-end;
         margin-right: 2em;
-        border-radius: 0 20px 20px 0;
+        border-radius: 0 50px 50px 0;
+
+        @include responsive.sm {
+            margin-right: 20%;
+        }
+
+        @include responsive.md {
+            margin-right: 30%;
+        }
+
+        @include responsive.lg {
+            margin-right: 35%;
+        }
     }
 
     .second-stanza, .fourth-stanza {
-        margin-left: 2em;
-        border-radius: 20px 0 0 20px;
+        padding: 1em 1em 1em 2em;
+        margin-left: 1em;
+        border-radius: 50px 0 0 50px;
+
+        @include responsive.sm {
+            margin-left: 20%;
+        }
+
+        @include responsive.md {
+            margin-left: 30%;
+        }
+
+        @include responsive.lg {
+            margin-left: 35%;
+        }
+
     }
 }
