@@ -351,4 +351,39 @@ img {
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  background-color: #314657;
+}
+.footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer li {
+  margin: 0 0.8em 1.5em 0.8em;
+}
+.footer svg {
+  fill: #C5C5C5;
+  transform: scale(1.3);
+}
+.footer p {
+  font-size: 0.6em;
+  font-family: "Roboto Slab", Monospace, serif;
+  color: rgba(197, 197, 197, 0.8);
+}
+.footer p a {
+  border-bottom: 1px dotted #c5c5c5;
+  color: #C5C5C5;
+  text-decoration: none;
+  transition: 2s;
+}
+.footer p a:hover {
+  border-bottom: 1px solid #c5c5c5;
+}
+
 /*# sourceMappingURL=style.css.map */
