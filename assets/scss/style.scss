@@ -408,10 +408,14 @@ img {
     svg {
         fill: c.$secondary__light-grey;
         transform: scale(1.3);
+
+        @include responsive.md {
+            transform: scale(1.4);
+        }
     }
 
     p {
-        font-size: .6em;
+        font-size: .7em;
         font-family: f.$font-regular;
         color: rgba(c.$secondary__light-grey, 0.8);
 
@@ -420,12 +424,13 @@ img {
             color: c.$secondary__light-grey;
             text-decoration: none;
 
-            transition: 2s;
-
             &:hover {
                 border-bottom: 1px solid rgba(c.$secondary__light-grey, 1);
-
             }
+        }
+
+        @include responsive.md {
+            font-size: .8em;
         }
     }
 }
