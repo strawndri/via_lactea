@@ -4,6 +4,10 @@
 
 body {
     background-color: c.$default__white;
+
+    &.darkmode {
+        background-color: c.$default__black;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -36,7 +40,7 @@ body::-webkit-scrollbar-thumb {
     text-indent: 15px;
     text-align: justify;
     
-    color: c.$primary__dark-blue;
+    color: c.$font__extra-dark-blue;
     background-color: rgba(c.$secondary__light-grey, 0.5);
 
     @include responsive.sm {
@@ -69,7 +73,10 @@ body::-webkit-scrollbar-thumb {
     .header__content {
         margin: 1em;
     }
+}
 
+.darkmode .header {
+    background-color: c.$primary__dark-blue;
 }
 
 .title-block {
@@ -166,6 +173,14 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+.darkmode .btn-accessibility {
+    background-color: c.$primary__dark-blue;
+
+    svg {
+        fill: c.$secondary__light-grey;
+    }
+}
+
 .toggle-button {
 
     display: none;
@@ -190,7 +205,7 @@ body::-webkit-scrollbar-thumb {
         margin-left: .8em;  
         border-radius: 15em;
         
-        background-color:rgba(c.$secondary__light-grey, 0.8);
+        background-color: rgba(c.$secondary__light-grey, 0.8);
         
         svg {
             width: 10em;
@@ -220,6 +235,21 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+.darkmode .toggle-button {
+
+    label {
+        background-color: rgba(c.$primary__dark-blue, 0.7);
+    }
+
+    svg {
+        fill: c.$secondary__light-grey;
+    }
+
+    .ball {
+        background-color: c.$secondary__light-grey;
+    }
+}
+
 .btn-icon {
         
     display: none;
@@ -241,6 +271,19 @@ body::-webkit-scrollbar-thumb {
     &:hover {
         background-color: rgba(c.$secondary__light-grey, 1);
         cursor: pointer;
+    }
+}
+
+.darkmode .btn-icon {
+    
+    background-color: rgba(c.$primary__dark-blue, 0.7);
+
+    svg {
+        fill: c.$secondary__light-grey;
+    }
+
+    &:hover {
+        background-color: rgba(c.$primary__dark-blue, 1);
     }
 }
 

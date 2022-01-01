@@ -7,6 +7,9 @@
 body {
   background-color: #f2f2f2;
 }
+body.darkmode {
+  background-color: #292929;
+}
 
 body::-webkit-scrollbar {
   width: 0.6em;
@@ -33,6 +36,10 @@ body::-webkit-scrollbar-thumb {
 }
 .header .header__content {
   margin: 1em;
+}
+
+.darkmode .header {
+  background-color: #202E39;
 }
 
 .title-block {
@@ -115,6 +122,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+.darkmode .btn-accessibility {
+  background-color: #202E39;
+}
+.darkmode .btn-accessibility svg {
+  fill: #C5C5C5;
+}
+
 .toggle-button {
   display: none;
 }
@@ -155,6 +169,16 @@ body::-webkit-scrollbar-thumb {
   transform: translateX(40px);
 }
 
+.darkmode .toggle-button label {
+  background-color: rgba(32, 46, 57, 0.7);
+}
+.darkmode .toggle-button svg {
+  fill: #C5C5C5;
+}
+.darkmode .toggle-button .ball {
+  background-color: #C5C5C5;
+}
+
 .btn-icon {
   display: none;
   width: 1.8em;
@@ -171,6 +195,16 @@ body::-webkit-scrollbar-thumb {
 .btn-icon:hover {
   background-color: #c5c5c5;
   cursor: pointer;
+}
+
+.darkmode .btn-icon {
+  background-color: rgba(32, 46, 57, 0.7);
+}
+.darkmode .btn-icon svg {
+  fill: #C5C5C5;
+}
+.darkmode .btn-icon:hover {
+  background-color: #202e39;
 }
 
 .buttons-enabled {
@@ -213,7 +247,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.5em;
   text-indent: 15px;
   text-align: justify;
-  color: #202E39;
+  color: #182128;
   background-color: rgba(197, 197, 197, 0.5);
 }
 @media screen and (min-width: 576px) {
@@ -241,7 +275,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.5em;
   text-indent: 15px;
   text-align: justify;
-  color: #202E39;
+  color: #182128;
   background-color: rgba(197, 197, 197, 0.5);
   display: none;
 }
