@@ -1,29 +1,38 @@
 @use "helpers/fonts" as f;
-@use "helpers/colors" as c;
+@use "helpers/colors.scss" as c;
 @use "helpers/_mixins-responsive.scss" as responsive;
 
-body {
-    background-color: c.$default__white;
-}
+@mixin themify($colors) {
+    @each $theme, $map in c.$colors {
+  
+      .theme-#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get(c.$colors, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+  
+        @content;
+        $theme-map: null !global;
+      }
+  
+    }
+  }
 
-body::-webkit-scrollbar {
-    width: 0.6em;
-    background-color: rgba(c.$secondary__light-grey, 1);
-    outline: 1px solid rgba(c.$primary__dark-blue, 0.5);
-}
+  @function themed($key) {
+    @return map-get($theme-map, $key);
+  };
 
-body::-webkit-scrollbar-thumb {
-    background-color: c.$secondary__light-blue;
-    box-shadow: inset 3px 3px 5px rgba(c.$default__black, 0.3);
-    border-radius: 10px;
-}
-
-// Mixins
 
 @mixin title {
     font-family: f.$font-title;
-    text-shadow: 3px 3px 2px rgba(c.$default__black, 0.5);
-    color: c.$secondary__light-grey;
+    font-weight: 700;
+    text-shadow: 2px 1px 1px rgba(c.$default__black, 0.2);
+
+    @include themify(c.$colors) {
+      color: themed("text");
+    }
+    
 }
 
 @mixin info-paragraph {
@@ -35,9 +44,12 @@ body::-webkit-scrollbar-thumb {
     line-height: 1.5em;
     text-indent: 15px;
     text-align: justify;
+
+    @include themify(c.$colors){
+      color: themed("text");
+      background-color: themed("secondary-02");
+    }
     
-    color: c.$font__extra-dark-blue;
-    background-color: rgba(c.$secondary__light-grey, 0.5);
 
     @include responsive.sm {
         margin: 1em 0;
@@ -49,387 +61,443 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-// Header
+body::-webkit-scrollbar {
+    width: 0.6em;
+    background-color: rgba(c.$light-grey, 1);
+    outline: 1px solid rgba(c.$dark-blue-02, 0.5);
+}
 
-.header {
+body::-webkit-scrollbar-thumb {
+    background-color: c.$dark-blue-01;
+    box-shadow: inset 3px 3px 5px rgba(c.$default__black, 0.3);
+    border-radius: 10px;
+}
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    height: 6em;
-    width: 100%;
+.app {
     
-    background-color: c.$primary__medium-blue;
-    box-shadow: 2px 1px 10px 2px rgba(c.$default__black, 0.5);
+    @include themify(c.$colors){
 
-    z-index: 1;
+      background-color: themed('background');
 
-    .header__content {
-        margin: 1em;
-    }
-}
-
-.title-block {
-
-    width: 17em;
-
-    h1 {
-        @include title;
-        padding-bottom: .4em;
-        font-size: 1.2rem;
-        font-variant: small-caps;
-
-        @include responsive.sm {
-            font-size: 1.6em;
-            padding-bottom: .2em;
-        }
     }
 
-    h2 {
-        @include title;
-        font-size: .8em;
-        text-align: left;
+      // Header
+      header {
+      
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+      
+          height: 6em;
+          width: 100%;
+          
+          box-shadow: 2px 1px 10px 2px rgba(c.$default__black, 0.5);
 
-        @include responsive.sm {
-            text-align: right;
-        }
-    }
-
-    &.hidden {
-        display: none;
-    }
-}
-
-.buttons-block{
-
-    display: flex;
-    align-items: center;
-
-    position: absolute;
-    left: 90%;
-    transform: translateX(-90%);
-
-    
-    padding: .5em;
-    border-radius: 150px;
-    
-    background-color: rgba(c.$secondary__light-blue, 0.5);
-
-    &.buttons-enabled {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-55%);
-    }
-
-    @include responsive.sm {
-
-        position: initial;
-        transform: translateX(0);
-        
-    };
-
-}
-
-.btn-accessibility {
-
-    padding: .6em .7em;
-    border-radius: 100px;
-    background-color: c.$secondary__light-grey;
-
-    svg {
-        fill: c.$primary__medium-blue;
-        transform: scale(1);
-    }
-
-    &:hover {
-
-        background-color: rgba(c.$secondary__light-grey, 0.8);
-        cursor: pointer;
-
-        svg {
-            animation: move-men .5s ease-in;
-        }
-
-        @keyframes move-men{
-
-            from {
-                transform: scale(1.2);
-            }
-
-            to {
-                transform: scale(1);
-            }
-        }
-    }
-}
-
-.toggle-button {
-
-    display: none;
-
-    input {
-        opacity: 0;
-        position: absolute;
-    }
-
-    label {
-        
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        
-        position: relative;
-        
-        width: 4.5em;
-        height: 1.8em;
-        padding: .5em;
-        margin-left: .8em;  
-        border-radius: 15em;
-        
-        background-color: rgba(c.$secondary__light-grey, 0.8);
-        
-        svg {
-            width: 10em;
-            fill: c.$primary__medium-blue;
-        }
-
-        .ball {
+          z-index: 1;
+          
+          .header__content {
+            margin: 1em;
+          }
+          
+          @include themify(c.$colors){
+            background-color: themed('bg-header');
+          }
+      }
+      
+      .title-block {
+      
+          width: 17em;
+      
+          h1 {
+              @include title;
+              padding-bottom: .4em;
+              font-size: 1.2rem;
+      
+              @include responsive.sm {
+                  font-size: 1.6em;
+                  padding-bottom: .2em;
+              }
+          }
+      
+          h2 {
+              @include title;
+              font-size: .8em;
+              text-align: left;
+      
+              @include responsive.sm {
+                  text-align: right;
+              }
+          }
+      
+          &.hidden {
+              display: none;
+          }
+      }
+      
+      .buttons-block{
+      
+          display: flex;
+          align-items: center;
+      
+          position: absolute;
+          left: 90%;
+          transform: translateX(-90%);
+      
+          
+          padding: .5em;
+          border-radius: 150px;
+          
+          
+          &.buttons-enabled {
             position: absolute;
-            
-            width: 1.8em;
-            height: 1.8em;
-            padding: .2em;
-            border-radius: 100%;
-            
-            background-color: c.$primary__medium-blue;
-            
-            transition: transform .25s linear;
+            left: 50%;
+            transform: translateX(-55%);
+          }
+          
+          @include themify(c.$colors){
+            background-color: rgba(themed("secondary-02"), 0.5);
+          }
 
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
-
-    #checkbox:checked + label .ball {
-        transform: translateX(40px); 
-    }
-}
-
-.btn-icon {
+          @include responsive.sm {
+            
+            position: initial;
+            transform: translateX(0);
+            
+          };
+          
+      }
+      
+      .btn-accessibility {
         
-    display: none;
-    
-    width: 1.8em;
-    height: 1.8em;        
-    padding: .5em;
-    margin-left: .8em;
-    border-radius: 100%;
-    
-    background-color: rgba(c.$secondary__light-grey, 0.8);
-    
-    transition: .5s;
+        padding: .6em .7em;
+        border-radius: 100px;
+        
+        svg {
 
-    svg {
-        fill: c.$primary__medium-blue;
-    }
+          transform: scale(1);
 
-    &:hover {
-        background-color: rgba(c.$secondary__light-grey, 1);
-        cursor: pointer;
-    }
-}
+          @include themify(c.$colors) {
+            fill: themed("text");
+          }
 
-.buttons-enabled {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-// Section information
-
-.information {
-
-    display: flex;
-    padding: 2em 1em;
-    background: c.$primary__medium-blue url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
-
-    @include responsive.sm {
-        padding: 2em 2em;
-    }
-
-    @include responsive.md {
-        padding: 2em 3em;
-    }
-
-    @include responsive.md {
-        padding: 2em 5em;
-    }
-}
-
-.information__box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    .first-info {
-        @include info-paragraph;        
-        @include responsive.md {
-            width: 60%;
-            padding-right: 10%;
         }
-    }
-    
-    .second-info {
-
-        @include info-paragraph;        
-        display: none;
-    
-        @include responsive.sm {
-            display: block;
-        }
-
-        @include responsive.md {
-            align-self: flex-start;
-            width: 70%;
-        }
-    }
-}
-
-img {
-
-    display: none;
-    position: absolute;
-    top: auto;
-    left: 80%;
-
-    width: 7em;
-    border-radius: 18px;
-    box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
-
-    @include responsive.md {
-        display: inline-block;
-        width: 10em;
-        left: 75%;
-    }
-}
-
-// Section poem
-
-.poem {
-    padding: 2em 0 1em 0;
-
-    div {
-        display: flex;
-        padding: 1em 0 1em 2em;
-        margin-bottom: 2em;
-        background-color: rgba(c.$secondary__light-grey, 0.6);
-
-        p {
-            font-size: .8em;
-            font-family: f.$font-regular;
-            line-height: 2em;
-
-            @include responsive.md {
-                font-size: .9em;
+        
+        &:hover {
+          
+          cursor: pointer;
+          
+          svg {
+            animation: move-men .5s ease-in;
+          }
+          
+          @keyframes move-men{
+            
+            from {
+              transform: scale(1.2);
             }
-
-            @include responsive.lg {
-                font-size: 1em;
+            
+            to {
+              transform: scale(1);
             }
-        }
-    }
+          }
+          
+          @include themify(c.$colors) {
+            background-color: rgba(themed("secondary-01"), 0.8);
+          }
 
-    .first-stanza, .third-stanza {
-        padding: 1em 2em 1em 1em;
-        justify-content: flex-end;
-        margin-right: 2em;
-        border-radius: 0 50px 50px 0;
-
-        @include responsive.sm {
-            margin-right: 20%;
         }
 
-        @include responsive.md {
-            margin-right: 30%;
+        @include themify(c.$colors) {
+          background-color: themed("secondary-01");
         }
 
-        @include responsive.lg {
-            margin-right: 35%;
-        }
-    }
+      }
+      
+      .toggle-button {
+        
+          display: none;
+          border-radius: 10em;
+          margin-left: .8em;  
+      
+          input {
+              opacity: 0;
+              position: absolute;
+          }
+      
+          label {
+              
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              
+              position: relative;
+              
+              width: 4.5em;
+              height: 1.8em;
+              padding: .5em;
+                            
+              svg {
+                  width: 10em;
+              }
+      
+              .ball {
+                  position: absolute;
+                  
+                  width: 1.8em;
+                  height: 1.8em;
+                  padding: .2em;
+                  border-radius: 100%;
+                                    
+                  transition: transform .25s linear;
+      
+                  &:hover {
+                      cursor: pointer;
+                  }
+              }
 
-    .second-stanza, .fourth-stanza {
-        padding: 1em 1em 1em 2em;
-        margin-left: 1em;
-        border-radius: 50px 0 0 50px;
-
-        @include responsive.sm {
-            margin-left: 20%;
-        }
-
-        @include responsive.md {
-            margin-left: 30%;
-        }
-
-        @include responsive.lg {
-            margin-left: 35%;
-        }
-
-    }
-}
-
-// Footer
-
-.footer {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 0;
+              @include themify(c.$colors) {
+                svg {
+                  fill: themed("text");
+                }
     
-    background-color: c.$primary__medium-blue;
+                .ball {
+                  background-color: themed("text");
+                }
+              }
+          }
+      
+          #checkbox:checked + label .ball {
+              transform: translateX(40px); 
+          }
 
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+          //mixins
+          @include themify(c.$colors) {
+            background-color: rgba(themed("secondary-01"), 0.8);
+          }
+      }
+      
+      .btn-icon {
+              
+          display: none;
+          
+          width: 1.8em;
+          height: 1.8em;        
+          padding: .5em;
+          margin-left: .8em;
+          border-radius: 100%;
+          
+          transition: .5s;
 
-    li {
-        margin: 0 .8em 1.5em .8em;
-    }
+          @include themify(c.$colors) {
+            background-color: rgba(themed("secondary-01"), 0.8);
 
-    svg {
-        fill: c.$secondary__light-grey;
-        transform: scale(1.3);
-
-        @include responsive.md {
-            transform: scale(1.4);
-        }
-    }
-
-    p {
-        font-size: .7em;
-        font-family: f.$font-regular;
-        color: rgba(c.$secondary__light-grey, 0.8);
-
-        a {
-            border-bottom: 1px dotted rgba(c.$secondary__light-grey, 1);
-            color: c.$secondary__light-grey;
-            text-decoration: none;
+            svg {
+              fill: themed("text");
+            }
 
             &:hover {
-                border-bottom: 1px solid rgba(c.$secondary__light-grey, 1);
-            }
-        }
+              background-color: rgba(themed("secondary-01"), 1);
+              cursor: pointer;
+            } 
 
-        @include responsive.md {
-            font-size: .8em;
-        }
+          }
+      }
+      
+      .buttons-enabled {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      // Section information
+      
+      // .information {
+      
+      //     display: flex;
+      //     padding: 2em 1em;
+      //     background: c.$primary__medium-blue url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
+      
+      //     @include responsive.sm {
+      //         padding: 2em 2em;
+      //     }
+      
+      //     @include responsive.md {
+      //         padding: 2em 3em;
+      //     }
+      
+      //     @include responsive.md {
+      //         padding: 2em 5em;
+      //     }
+      // }
+      
+      // .information__box {
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: center;
+          
+      //     .first-info {
+      //         @include info-paragraph;        
+      //         @include responsive.md {
+      //             width: 60%;
+      //             padding-right: 10%;
+      //         }
+      //     }
+          
+      //     .second-info {
+      
+      //         @include info-paragraph;        
+      //         display: none;
+          
+      //         @include responsive.sm {
+      //             display: block;
+      //         }
+      
+      //         @include responsive.md {
+      //             align-self: flex-start;
+      //             width: 70%;
+      //         }
+      //     }
+      // }
+      
+      // img {
+      
+      //     display: none;
+      //     position: absolute;
+      //     top: auto;
+      //     left: 80%;
+      
+      //     width: 7em;
+      //     border-radius: 18px;
+      //     box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
+      
+      //     @include responsive.md {
+      //         display: inline-block;
+      //         width: 10em;
+      //         left: 75%;
+      //     }
+      // }
+      
+      // Section poem
+      
+      // .poem {
+      //     padding: 2em 0 1em 0;
+      
+      //     div {
+      //         display: flex;
+      //         padding: 1em 0 1em 2em;
+      //         margin-bottom: 2em;
+      //         background-color: rgba(c.$secondary__light-grey, 0.6);
+      
+      //         p {
+      //             font-size: .8em;
+      //             font-family: f.$font-regular;
+      //             line-height: 2em;
+      
+      //             @include responsive.md {
+      //                 font-size: .9em;
+      //             }
+      
+      //             @include responsive.lg {
+      //                 font-size: 1em;
+      //             }
+      //         }
+      //     }
+      
+      //     .first-stanza, .third-stanza {
+      //         padding: 1em 2em 1em 1em;
+      //         justify-content: flex-end;
+      //         margin-right: 2em;
+      //         border-radius: 0 50px 50px 0;
+      
+      //         @include responsive.sm {
+      //             margin-right: 20%;
+      //         }
+      
+      //         @include responsive.md {
+      //             margin-right: 30%;
+      //         }
+      
+      //         @include responsive.lg {
+      //             margin-right: 35%;
+      //         }
+      //     }
+      
+      //     .second-stanza, .fourth-stanza {
+      //         padding: 1em 1em 1em 2em;
+      //         margin-left: 1em;
+      //         border-radius: 50px 0 0 50px;
+      
+      //         @include responsive.sm {
+      //             margin-left: 20%;
+      //         }
+      
+      //         @include responsive.md {
+      //             margin-left: 30%;
+      //         }
+      
+      //         @include responsive.lg {
+      //             margin-left: 35%;
+      //         }
+      
+      //     }
+      // }
+      
+      // Footer
+      
+      // .footer {
+      
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: center;
+      //     justify-content: center;
+      //     padding: 2em 0;
+          
+      //     background-color: c.$primary__medium-blue;
+      
+      //     ul {
+      //         display: flex;
+      //         align-items: center;
+      //         justify-content: center;
+      //     }
+      
+      //     li {
+      //         margin: 0 .8em 1.5em .8em;
+      //     }
+      
+      //     svg {
+      //         fill: c.$secondary__light-grey;
+      //         transform: scale(1.3);
+      
+      //         @include responsive.md {
+      //             transform: scale(1.4);
+      //         }
+      //     }
+      
+      //     p {
+      //         font-size: .7em;
+      //         font-family: f.$font-regular;
+      //         color: rgba(c.$secondary__light-grey, 0.8);
+      
+      //         a {
+      //             border-bottom: 1px dotted rgba(c.$secondary__light-grey, 1);
+      //             color: c.$secondary__light-grey;
+      //             text-decoration: none;
+      
+      //             &:hover {
+      //                 border-bottom: 1px solid rgba(c.$secondary__light-grey, 1);
+      //             }
+      //         }
+      
+      //         @include responsive.md {
+      //             font-size: .8em;
+      //         }
+      //     }
+      // }
     }
-}
+
+
+
+
+

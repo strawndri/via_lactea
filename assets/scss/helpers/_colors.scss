@@ -1,11 +1,37 @@
-$default__white: #f2f2f2; 
+$default__white: #F2F2F2;
 $default__black: #292929;
 
-$font__extra-dark-blue: #182128;
-$font__medium-grey: #9A9A9A;
+$light-blue: #768ea0;
+$dark-blue-02: #242F36;
 
-$primary__medium-blue: #314657;
-$primary__dark-blue: #202E39;
+$light-grey: #C4C4C4;
+$dark-blue-03: #182128;
 
-$secondary__light-blue: #50758F;
-$secondary__light-grey: #C5C5C5;
+$medium-blue-02: #314657;
+$medium-blue-01: #405A6C;
+
+$dark-blue-01: #202E39;
+$medium-grey: #9A9A9A;
+
+
+$colors: (
+
+    light: (
+        background: $default__white,
+        bg-header: $light-blue,
+        secondary-01: $light-grey,
+        secondary-02: $medium-blue-02,
+        text: $dark-blue-01
+    ),
+    
+    dark: (
+        background: $default__black,
+        bg-header: $dark-blue-02,
+        secondary-01: $dark-blue-03,
+        secondary-02: $medium-blue-01,
+        text: $medium-grey
+    )
+);
+
+
+

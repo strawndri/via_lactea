@@ -24,5 +24,16 @@ const btnCheckBox = document.getElementById("checkbox");
 const element = document.body
 
 btnCheckBox.addEventListener("change", () => {
-    element.classList.toggle("darkmode")
+
+    if (element.classList[0] == "theme-light") {
+    console.log(element.classList[0])
+
+        element.classList.remove("theme-light")
+        element.classList.add("theme-dark")
+    }
+
+    else {
+        element.classList.remove("theme-dark")
+        element.classList.add("theme-light")  
+    }
 })
