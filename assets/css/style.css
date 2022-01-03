@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #202E39;
+  background-color: #405A6C;
   box-shadow: inset 3px 3px 5px rgba(41, 41, 41, 0.3);
   border-radius: 10px;
 }
@@ -236,6 +236,260 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.app .information {
+  display: flex;
+  padding: 2em 1em;
+  background: #314657 url("../img/galaxy-background.jpg") center/cover no-repeat fixed;
+}
+@media screen and (min-width: 576px) {
+  .app .information {
+    padding: 2em 2em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information {
+    padding: 2em 3em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information {
+    padding: 2em 5em;
+  }
+}
+.app .information__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app .information__box .first-info {
+  padding: 0.8em;
+  border-radius: 18px;
+  font-size: 0.7em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 1.5em;
+  text-indent: 15px;
+  text-align: justify;
+}
+.theme-light .app .information__box .first-info {
+  color: #202E39;
+  background-color: rgba(196, 196, 196, 0.6);
+}
+.theme-dark .app .information__box .first-info {
+  color: #9A9A9A;
+  background-color: rgba(24, 33, 40, 0.6);
+}
+@media screen and (min-width: 576px) {
+  .app .information__box .first-info {
+    margin: 1em 0;
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information__box .first-info {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information__box .first-info {
+    width: 60%;
+    padding-right: 10%;
+  }
+}
+.app .information__box .second-info {
+  padding: 0.8em;
+  border-radius: 18px;
+  font-size: 0.7em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 1.5em;
+  text-indent: 15px;
+  text-align: justify;
+  display: none;
+}
+.theme-light .app .information__box .second-info {
+  color: #202E39;
+  background-color: rgba(196, 196, 196, 0.6);
+}
+.theme-dark .app .information__box .second-info {
+  color: #9A9A9A;
+  background-color: rgba(24, 33, 40, 0.6);
+}
+@media screen and (min-width: 576px) {
+  .app .information__box .second-info {
+    margin: 1em 0;
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information__box .second-info {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 576px) {
+  .app .information__box .second-info {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .information__box .second-info {
+    align-self: flex-start;
+    width: 70%;
+  }
+}
+.app img {
+  display: none;
+  position: absolute;
+  top: auto;
+  left: 80%;
+  width: 7em;
+  border-radius: 18px;
+  box-shadow: 11px 8px 0px 2px rgba(41, 41, 41, 0.5);
+}
+@media screen and (min-width: 768px) {
+  .app img {
+    display: inline-block;
+    width: 10em;
+    left: 75%;
+  }
+}
+.app .poem {
+  padding: 2em 0 1em 0;
+}
+.app .poem div {
+  display: flex;
+  padding: 1em 0 1em 2em;
+  margin-bottom: 2em;
+}
+.app .poem div p {
+  font-size: 0.8em;
+  font-family: "Roboto Slab", Monospace, serif;
+  line-height: 2em;
+}
+@media screen and (min-width: 768px) {
+  .app .poem div p {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .app .poem div p {
+    font-size: 1em;
+  }
+}
+.theme-light .app .poem div {
+  background-color: #c4c4c4;
+  color: #202E39;
+}
+.theme-dark .app .poem div {
+  background-color: #182128;
+  color: #9A9A9A;
+}
+.app .poem .first-stanza, .app .poem .third-stanza {
+  padding: 1em 2em 1em 1em;
+  justify-content: flex-end;
+  margin-right: 2em;
+  border-radius: 0 50px 50px 0;
+}
+@media screen and (min-width: 576px) {
+  .app .poem .first-stanza, .app .poem .third-stanza {
+    margin-right: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .poem .first-stanza, .app .poem .third-stanza {
+    margin-right: 30%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .app .poem .first-stanza, .app .poem .third-stanza {
+    margin-right: 35%;
+  }
+}
+.app .poem .second-stanza, .app .poem .fourth-stanza {
+  padding: 1em 1em 1em 2em;
+  margin-left: 1em;
+  border-radius: 50px 0 0 50px;
+}
+@media screen and (min-width: 576px) {
+  .app .poem .second-stanza, .app .poem .fourth-stanza {
+    margin-left: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .app .poem .second-stanza, .app .poem .fourth-stanza {
+    margin-left: 30%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .app .poem .second-stanza, .app .poem .fourth-stanza {
+    margin-left: 35%;
+  }
+}
+.app .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+.theme-light .app .footer {
+  background-color: #768ea0;
+}
+.theme-dark .app .footer {
+  background-color: #242F36;
+}
+.app .footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app .footer li {
+  margin: 0 0.8em 1.5em 0.8em;
+}
+.app .footer svg {
+  transform: scale(1.3);
+}
+.theme-light .app .footer svg {
+  fill: #202E39;
+}
+.theme-dark .app .footer svg {
+  fill: #9A9A9A;
+}
+@media screen and (min-width: 768px) {
+  .app .footer svg {
+    transform: scale(1.4);
+  }
+}
+.app .footer p {
+  font-size: 0.7em;
+  font-family: "Roboto Slab", Monospace, serif;
+}
+.app .footer p a {
+  text-decoration: none;
+}
+.theme-light .app .footer p {
+  color: rgba(32, 46, 57, 0.8);
+}
+.theme-light .app .footer p a {
+  border-bottom: 1px dotted #202e39;
+  color: #202E39;
+}
+.theme-light .app .footer p a:hover {
+  border-bottom: 1px solid #202e39;
+}
+.theme-dark .app .footer p {
+  color: rgba(154, 154, 154, 0.8);
+}
+.theme-dark .app .footer p a {
+  border-bottom: 1px dotted #9a9a9a;
+  color: #9A9A9A;
+}
+.theme-dark .app .footer p a:hover {
+  border-bottom: 1px solid #9a9a9a;
+}
+@media screen and (min-width: 768px) {
+  .app .footer p {
+    font-size: 0.8em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
