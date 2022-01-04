@@ -20,22 +20,19 @@ $("#btnAccessibility").click(function() {
 });
 
 
-// const btnCheckBox = document.getElementById("checkbox");
-// const element = document.body
+$("#checkbox").change(function() {
 
-// btnCheckBox.addEventListener("change", () => {
 
-//     if (element.classList[0] == "theme-light") {
+    if ($('body').hasClass('theme-light')) {
 
-//         element.classList.remove("theme-light")
-//         element.classList.add("theme-dark")
-//     }
+        $('body').toggleClass("theme-light").toggleClass("theme-dark")
+    }
 
-//     else {
-//         element.classList.remove("theme-dark")
-//         element.classList.add("theme-light")  
-//     }
-// })
+    else {
+        $('body').toggleClass("theme-dark").toggleClass("theme-light")
+ 
+    }
+})
 
 // const allTexts = document.getElementById("")
 // const btnFont = document.querySelectorAll(".btn-font")
