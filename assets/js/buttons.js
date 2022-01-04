@@ -1,20 +1,20 @@
-const btnAccessibility = document.getElementById("btnAccessibility");
-const btnElements = document.querySelectorAll(".btn");
-const buttonsBlockElement = document.getElementById("buttonsBlock");
-const titleBlockElement = document.getElementById("titleBlock");
+// const btnAccessibility = $("#btnAccessibility");
+const btnElements = $(".btn");
+// const buttonsBlockElement = $("#buttonsBlock");
+// const titleBlockElement = $("#titleBlock");
 
 var size = 576;
 
-btnAccessibility.addEventListener("click", () => {
+$("#btnAccessibility").click(function() {
 
     for (var i = 0; i < btnElements.length; i++) {
 
-        btnElements[i].classList.toggle("buttons-enabled")
+        $(".btn").toggleClass("buttons-enabled");
     }
 
     if (window.innerWidth < size) {
-        titleBlockElement.classList.toggle("hidden")
-        buttonsBlockElement.classList.toggle("buttons-enabled")
+        $("#titleBlock").toggleClass("hidden")
+        $("#buttonsBlock").toggleClass("buttons-enabled")
     }
 
 });
@@ -44,6 +44,6 @@ btnAccessibility.addEventListener("click", () => {
 //     console.log(allTexts);
 
 //     if (e.target.id == "fontUp") {
-//         allTexts.css()
+//         allTexts.()
 //     }
 // })
