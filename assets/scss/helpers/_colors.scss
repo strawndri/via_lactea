@@ -21,7 +21,9 @@ $colors: (
         bg-02: $light-blue,
         secondary-01: $light-grey,
         secondary-02: $medium-blue-02,
-        text: $dark-blue-01
+        text: $dark-blue-01,
+        icon__font-up: "../img/accessibility/icon-font_up-01.svg",
+        icon__font-down: "../img/accessibility/icon-font_down-01.svg"
     ),
     
     dark: (
@@ -29,7 +31,9 @@ $colors: (
         bg-02: $dark-blue-02,
         secondary-01: $dark-blue-03,
         secondary-02: $medium-blue-01,
-        text: $medium-grey
+        text: $medium-grey,
+        icon__font-up: "../img/accessibility/icon-font_up-02.svg",
+        icon__font-down: "../img/accessibility/icon-font_down-02.svg"
     )
 );
 

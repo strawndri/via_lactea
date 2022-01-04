@@ -203,7 +203,7 @@ body::-webkit-scrollbar-thumb {
 .theme-dark .app .toggle-button {
   background-color: rgba(24, 33, 40, 0.8);
 }
-.app .btn-icon {
+.app .btn-font {
   display: none;
   width: 1.8em;
   height: 1.8em;
@@ -212,23 +212,29 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100%;
   transition: 0.5s;
 }
-.theme-light .app .btn-icon {
+.theme-light .app .btn-font {
   background-color: rgba(196, 196, 196, 0.8);
 }
-.theme-light .app .btn-icon svg {
-  fill: #202E39;
+.theme-light .app .btn-font.font-up {
+  background: rgba(196, 196, 196, 0.8) url("../img/accessibility/icon-font_up-01.svg") center/2em no-repeat;
 }
-.theme-light .app .btn-icon:hover {
+.theme-light .app .btn-font.font-down {
+  background: rgba(196, 196, 196, 0.8) url("../img/accessibility/icon-font_down-01.svg") center/2em no-repeat;
+}
+.theme-light .app .btn-font:hover {
   background-color: #c4c4c4;
   cursor: pointer;
 }
-.theme-dark .app .btn-icon {
+.theme-dark .app .btn-font {
   background-color: rgba(24, 33, 40, 0.8);
 }
-.theme-dark .app .btn-icon svg {
-  fill: #9A9A9A;
+.theme-dark .app .btn-font.font-up {
+  background: rgba(24, 33, 40, 0.8) url("../img/accessibility/icon-font_up-02.svg") center/2em no-repeat;
 }
-.theme-dark .app .btn-icon:hover {
+.theme-dark .app .btn-font.font-down {
+  background: rgba(24, 33, 40, 0.8) url("../img/accessibility/icon-font_down-02.svg") center/2em no-repeat;
+}
+.theme-dark .app .btn-font:hover {
   background-color: #182128;
   cursor: pointer;
 }

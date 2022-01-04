@@ -277,8 +277,7 @@ body::-webkit-scrollbar-thumb {
             background-color: rgba(themed("secondary-01"), 0.8);
           }
       }
-      
-      .btn-icon {
+      .btn-font {
               
           display: none;
           
@@ -290,12 +289,23 @@ body::-webkit-scrollbar-thumb {
           
           transition: .5s;
 
+
           @include themify(c.$colors) {
+
+            &.font-up{
+              background: rgba(themed("secondary-01"), 0.8)
+              url(themed("icon__font-up"))
+              center / 2em no-repeat;     
+            }
+
+            &.font-down{
+              background: rgba(themed("secondary-01"), 0.8)
+              url(themed("icon__font-down"))
+              center / 2em no-repeat;     
+            }
+
             background-color: rgba(themed("secondary-01"), 0.8);
 
-            svg {
-              fill: themed("text");
-            }
 
             &:hover {
               background-color: rgba(themed("secondary-01"), 1);
