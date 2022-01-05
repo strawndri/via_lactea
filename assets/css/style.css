@@ -93,7 +93,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0.5em;
   border-radius: 150px;
 }
-.app .buttons-block.buttons-enabled {
+.app .buttons-block.visible {
   position: absolute;
   left: 50%;
   transform: translateX(-55%);
@@ -212,6 +212,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100%;
   transition: 0.5s;
 }
+.app .btn-font.disabled {
+  opacity: 0.7;
+}
 .theme-light .app .btn-font {
   background-color: rgba(196, 196, 196, 0.8);
 }
@@ -224,6 +227,10 @@ body::-webkit-scrollbar-thumb {
 .theme-light .app .btn-font:hover {
   background-color: #c4c4c4;
   cursor: pointer;
+}
+.theme-light .app .btn-font.disabled:hover {
+  background-color: rgba(196, 196, 196, 0.8);
+  cursor: initial;
 }
 .theme-dark .app .btn-font {
   background-color: rgba(24, 33, 40, 0.8);
@@ -238,7 +245,11 @@ body::-webkit-scrollbar-thumb {
   background-color: #182128;
   cursor: pointer;
 }
-.app .buttons-enabled {
+.theme-dark .app .btn-font.disabled:hover {
+  background-color: rgba(24, 33, 40, 0.8);
+  cursor: initial;
+}
+.app .visible {
   display: flex;
   align-items: center;
   justify-content: center;
