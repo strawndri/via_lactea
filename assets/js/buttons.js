@@ -43,9 +43,7 @@ $(".btn-font").click (function(e) {
         fontSize < 24 ?  $("main").css("font-size", fontSize + 1) : console.log('Stop!')
     }
 
-    // else {
-
-    // }
-    
-    // ($("main").css('fontSize')
+    else {
+        fontSize > 14 ?  $("main").css("font-size", fontSize - 1) : console.log('Stop!')
+    }    
 })
