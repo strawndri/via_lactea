@@ -27,6 +27,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
   height: 6em;
   width: 100%;
   box-shadow: 2px 1px 10px 2px rgba(41, 41, 41, 0.5);
@@ -37,9 +38,11 @@ body::-webkit-scrollbar-thumb {
 }
 .theme-light .app header {
   background-color: #768ea0;
+  border-bottom: 1px solid rgba(154, 154, 154, 0.5);
 }
 .theme-dark .app header {
   background-color: #242F36;
+  border-bottom: 1px solid rgba(154, 154, 154, 0.5);
 }
 .app .title-block {
   width: 17em;
@@ -256,6 +259,7 @@ body::-webkit-scrollbar-thumb {
 }
 .app main {
   font-size: 16px;
+  padding-top: 6em;
 }
 .app main .information {
   display: flex;
@@ -399,10 +403,12 @@ body::-webkit-scrollbar-thumb {
 }
 .theme-light .app main .poem div {
   background-color: #c4c4c4;
+  border: 1px solid rgba(154, 154, 154, 0.5);
   color: #202E39;
 }
 .theme-dark .app main .poem div {
   background-color: #182128;
+  border: 1px solid rgba(154, 154, 154, 0.5);
   color: #9A9A9A;
 }
 .app main .poem .first-stanza, .app main .poem .third-stanza {
@@ -452,6 +458,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   padding: 2em 0;
+  border-top: 1px solid rgba(154, 154, 154, 0.5);
 }
 .theme-light .app .footer {
   background-color: #768ea0;

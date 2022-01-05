@@ -89,6 +89,8 @@ body::-webkit-scrollbar-thumb {
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
+          
+          position: fixed;
       
           height: 6em;
           width: 100%;
@@ -103,6 +105,7 @@ body::-webkit-scrollbar-thumb {
           
           @include themify(c.$colors){
             background-color: themed('bg-02');
+            border-bottom: 1px solid rgba(c.$medium-grey, 0.5);
           }
       }
       
@@ -336,6 +339,7 @@ body::-webkit-scrollbar-thumb {
       main {
 
         font-size: 16px;
+        padding-top: 6em;
 
         .information {
       
@@ -429,6 +433,7 @@ body::-webkit-scrollbar-thumb {
 
               @include themify(c.$colors) {
                 background-color: rgba(themed("secondary-01"), 1);
+                border: 1px solid rgba(c.$medium-grey, 0.5);
                 color: themed("text");
               }
           }
@@ -482,6 +487,8 @@ body::-webkit-scrollbar-thumb {
           align-items: center;
           justify-content: center;
           padding: 2em 0;
+
+          border-top: 1px solid rgba(c.$medium-grey, 0.5);
 
           //colors
           @include themify(c.$colors) {
