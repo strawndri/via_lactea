@@ -243,106 +243,111 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
 }
-.app .information {
+.app main {
+  font-size: 16px;
+}
+.app main .information {
   display: flex;
   padding: 2em 1em;
   background: #314657 url("../img/galaxy-background.jpg") center/cover no-repeat fixed;
 }
 @media screen and (min-width: 576px) {
-  .app .information {
+  .app main .information {
     padding: 2em 2em;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information {
+  .app main .information {
     padding: 2em 3em;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information {
+  .app main .information {
     padding: 2em 5em;
   }
 }
-.app .information__box {
+.app main .information__box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.app .information__box .first-info {
+.app main .information__box .first-info {
   padding: 0.8em;
   border-radius: 18px;
   font-size: 0.7em;
   font-family: "Roboto Slab", Monospace, serif;
   line-height: 1.5em;
   text-indent: 15px;
-  text-align: justify;
+  text-align: left;
 }
-.theme-light .app .information__box .first-info {
+.theme-light .app main .information__box .first-info {
   color: #202E39;
   background-color: rgba(196, 196, 196, 0.6);
 }
-.theme-dark .app .information__box .first-info {
+.theme-dark .app main .information__box .first-info {
   color: #9A9A9A;
   background-color: rgba(24, 33, 40, 0.6);
 }
 @media screen and (min-width: 576px) {
-  .app .information__box .first-info {
+  .app main .information__box .first-info {
     margin: 1em 0;
     font-size: 0.8em;
+    text-align: justify;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information__box .first-info {
+  .app main .information__box .first-info {
     font-size: 0.9em;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information__box .first-info {
+  .app main .information__box .first-info {
     width: 60%;
     padding-right: 10%;
   }
 }
-.app .information__box .second-info {
+.app main .information__box .second-info {
   padding: 0.8em;
   border-radius: 18px;
   font-size: 0.7em;
   font-family: "Roboto Slab", Monospace, serif;
   line-height: 1.5em;
   text-indent: 15px;
-  text-align: justify;
+  text-align: left;
   display: none;
 }
-.theme-light .app .information__box .second-info {
+.theme-light .app main .information__box .second-info {
   color: #202E39;
   background-color: rgba(196, 196, 196, 0.6);
 }
-.theme-dark .app .information__box .second-info {
+.theme-dark .app main .information__box .second-info {
   color: #9A9A9A;
   background-color: rgba(24, 33, 40, 0.6);
 }
 @media screen and (min-width: 576px) {
-  .app .information__box .second-info {
+  .app main .information__box .second-info {
     margin: 1em 0;
     font-size: 0.8em;
+    text-align: justify;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information__box .second-info {
+  .app main .information__box .second-info {
     font-size: 0.9em;
   }
 }
 @media screen and (min-width: 576px) {
-  .app .information__box .second-info {
+  .app main .information__box .second-info {
     display: block;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .information__box .second-info {
+  .app main .information__box .second-info {
     align-self: flex-start;
     width: 70%;
   }
 }
-.app img {
+.app main img {
   display: none;
   position: absolute;
   top: auto;
@@ -352,81 +357,81 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 11px 8px 0px 2px rgba(41, 41, 41, 0.5);
 }
 @media screen and (min-width: 768px) {
-  .app img {
+  .app main img {
     display: inline-block;
     width: 10em;
     left: 75%;
   }
 }
-.app .poem {
+.app main .poem {
   padding: 2em 0 1em 0;
 }
-.app .poem div {
+.app main .poem div {
   display: flex;
   padding: 1em 0 1em 2em;
   margin-bottom: 2em;
 }
-.app .poem div p {
+.app main .poem div p {
   font-size: 0.8em;
   font-family: "Roboto Slab", Monospace, serif;
   line-height: 2em;
 }
 @media screen and (min-width: 768px) {
-  .app .poem div p {
+  .app main .poem div p {
     font-size: 0.9em;
   }
 }
 @media screen and (min-width: 992px) {
-  .app .poem div p {
+  .app main .poem div p {
     font-size: 1em;
   }
 }
-.theme-light .app .poem div {
+.theme-light .app main .poem div {
   background-color: #c4c4c4;
   color: #202E39;
 }
-.theme-dark .app .poem div {
+.theme-dark .app main .poem div {
   background-color: #182128;
   color: #9A9A9A;
 }
-.app .poem .first-stanza, .app .poem .third-stanza {
+.app main .poem .first-stanza, .app main .poem .third-stanza {
   padding: 1em 2em 1em 1em;
   justify-content: flex-end;
   margin-right: 2em;
   border-radius: 0 50px 50px 0;
 }
 @media screen and (min-width: 576px) {
-  .app .poem .first-stanza, .app .poem .third-stanza {
+  .app main .poem .first-stanza, .app main .poem .third-stanza {
     margin-right: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .poem .first-stanza, .app .poem .third-stanza {
+  .app main .poem .first-stanza, .app main .poem .third-stanza {
     margin-right: 30%;
   }
 }
 @media screen and (min-width: 992px) {
-  .app .poem .first-stanza, .app .poem .third-stanza {
+  .app main .poem .first-stanza, .app main .poem .third-stanza {
     margin-right: 35%;
   }
 }
-.app .poem .second-stanza, .app .poem .fourth-stanza {
+.app main .poem .second-stanza, .app main .poem .fourth-stanza {
   padding: 1em 1em 1em 2em;
   margin-left: 1em;
   border-radius: 50px 0 0 50px;
 }
 @media screen and (min-width: 576px) {
-  .app .poem .second-stanza, .app .poem .fourth-stanza {
+  .app main .poem .second-stanza, .app main .poem .fourth-stanza {
     margin-left: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  .app .poem .second-stanza, .app .poem .fourth-stanza {
+  .app main .poem .second-stanza, .app main .poem .fourth-stanza {
     margin-left: 30%;
   }
 }
 @media screen and (min-width: 992px) {
-  .app .poem .second-stanza, .app .poem .fourth-stanza {
+  .app main .poem .second-stanza, .app main .poem .fourth-stanza {
     margin-left: 35%;
   }
 }

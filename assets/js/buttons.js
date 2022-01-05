@@ -34,13 +34,18 @@ $("#checkbox").change(function() {
     }
 })
 
-// const allTexts = document.getElementById("")
-// const btnFont = document.querySelectorAll(".btn-font")
 
-// allTexts.addEventListener("click", (e) => {
-//     console.log(allTexts);
+$(".btn-font").click (function(e) {
 
-//     if (e.target.id == "fontUp") {
-//         allTexts.()
-//     }
-// })
+    var fontSize = parseInt($("main").css("font-size"))
+
+    if (e.target.id == "fontUp") {
+        fontSize < 24 ?  $("main").css("font-size", fontSize + 1) : console.log('Stop!')
+    }
+
+    // else {
+
+    // }
+    
+    // ($("main").css('fontSize')
+})

@@ -43,7 +43,7 @@
     font-family: f.$font-regular;
     line-height: 1.5em;
     text-indent: 15px;
-    text-align: justify;
+    text-align: left;
 
     @include themify(c.$colors){
       color: themed("text");
@@ -54,6 +54,7 @@
     @include responsive.sm {
         margin: 1em 0;
         font-size: .8em;
+        text-align: justify;
     }
 
     @include responsive.md {
@@ -323,7 +324,11 @@ body::-webkit-scrollbar-thumb {
       
       //Section information
       
-      .information {
+      main {
+
+        font-size: 16px;
+
+        .information {
       
           display: flex;
           padding: 2em 1em;
@@ -456,6 +461,7 @@ body::-webkit-scrollbar-thumb {
               }
       
           }
+      }
       }
       
       // Footer
