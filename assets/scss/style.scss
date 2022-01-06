@@ -339,7 +339,7 @@ body::-webkit-scrollbar-thumb {
       main {
 
         font-size: 16px;
-        padding-top: 6em;
+        padding-top: 7%;
 
         .information {
       
@@ -356,7 +356,7 @@ body::-webkit-scrollbar-thumb {
           }
       
           @include responsive.md {
-              padding: 2em 5em;
+              padding: 4em 8em;
           }
       }
       
@@ -410,12 +410,12 @@ body::-webkit-scrollbar-thumb {
       //Section poem
       
       .poem {
-          padding: 2em 0 1em 0;
+          padding: 3em 0 1em 0;
       
           div {
               display: flex;
               padding: 1em 0 1em 2em;
-              margin-bottom: 2em;
+              margin-bottom: 3em;
       
               p {
                   font-size: .8em;
@@ -524,6 +524,7 @@ body::-webkit-scrollbar-thumb {
           p {
               font-size: .7em;
               font-family: f.$font-regular;
+              font-weight: 700;
               
               a { text-decoration: none; }
               

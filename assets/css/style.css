@@ -259,7 +259,7 @@ body::-webkit-scrollbar-thumb {
 }
 .app main {
   font-size: 16px;
-  padding-top: 6em;
+  padding-top: 7%;
 }
 .app main .information {
   display: flex;
@@ -278,7 +278,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (min-width: 768px) {
   .app main .information {
-    padding: 2em 5em;
+    padding: 4em 8em;
   }
 }
 .app main .information__box {
@@ -379,12 +379,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .app main .poem {
-  padding: 2em 0 1em 0;
+  padding: 3em 0 1em 0;
 }
 .app main .poem div {
   display: flex;
   padding: 1em 0 1em 2em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 .app main .poem div p {
   font-size: 0.8em;
@@ -491,6 +491,7 @@ body::-webkit-scrollbar-thumb {
 .app .footer p {
   font-size: 0.7em;
   font-family: "Roboto Slab", Monospace, serif;
+  font-weight: 700;
 }
 .app .footer p a {
   text-decoration: none;
