@@ -452,6 +452,13 @@ body::-webkit-scrollbar-thumb {
     margin-left: 35%;
   }
 }
+.app main .poem .anime-item {
+  transform: translate(-600px, 0px);
+}
+.app main .poem .anime-init {
+  transform: translate(0px, 0px);
+  transition: 2s all ease-in-out;
+}
 .app .footer {
   display: flex;
   flex-direction: column;
