@@ -1,6 +1,7 @@
 @use "helpers/fonts" as f;
 @use "helpers/colors.scss" as c;
-@use "helpers/_mixins-responsive.scss" as responsive;
+@use "helpers/_mixins-layout.scss" as layout;
+@use "./scrollbar.scss";
 
 @mixin themify($colors) {
     @each $theme, $map in c.$colors {
@@ -23,8 +24,7 @@
     @return map-get($theme-map, $key);
   };
 
-
-@mixin title {
+  @mixin title {
     font-family: f.$font-title;
     font-weight: 700;
     text-shadow: 2px 1px 1px rgba(c.$default__black, 0.2);
@@ -51,28 +51,17 @@
     }
     
 
-    @include responsive.sm {
+    @include layout.sm {
         margin: 1em 0;
         font-size: .8em;
         text-align: justify;
     }
 
-    @include responsive.md {
+    @include layout.md {
         font-size: .9em;
     }
 }
 
-body::-webkit-scrollbar {
-    width: 0.6em;
-    background-color: rgba(c.$light-grey, 1);
-    outline: 1px solid rgba(c.$dark-blue-02, 0.5);
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: c.$medium-blue-01;
-    box-shadow: inset 3px 3px 5px rgba(c.$default__black, 0.3);
-    border-radius: 10px;
-}
 
 .app {
 
@@ -120,7 +109,7 @@ body::-webkit-scrollbar-thumb {
               padding-bottom: .4em;
               font-size: 1.2rem;
       
-              @include responsive.sm {
+              @include layout.sm {
                   font-size: 1.6em;
                   padding-bottom: .2em;
               }
@@ -131,7 +120,7 @@ body::-webkit-scrollbar-thumb {
               font-size: .8em;
               text-align: left;
       
-              @include responsive.sm {
+              @include layout.sm {
                   text-align: right;
               }
           }
@@ -165,7 +154,7 @@ body::-webkit-scrollbar-thumb {
             background-color: rgba(themed("secondary-02"), 0.5);
           }
 
-          @include responsive.sm {
+          @include layout.sm {
             
             position: initial;
             transform: translateX(0);
@@ -349,15 +338,15 @@ body::-webkit-scrollbar-thumb {
           padding: 2em 1em;
           background: c.$medium-blue-02 url("../img/galaxy-background.jpg") center / cover no-repeat fixed;
       
-          @include responsive.sm {
+          @include layout.sm {
               padding: 2em 2em;
           }
       
-          @include responsive.md {
+          @include layout.md {
               padding: 2em 3em;
           }
       
-          @include responsive.md {
+          @include layout.md {
               padding: 4em 8em;
           }
       }
@@ -369,7 +358,7 @@ body::-webkit-scrollbar-thumb {
           
           .first-info {
               @include info-paragraph;        
-              @include responsive.md {
+              @include layout.md {
                   width: 60%;
                   padding-right: 10%;
               }
@@ -380,11 +369,11 @@ body::-webkit-scrollbar-thumb {
               @include info-paragraph;        
               display: none;
           
-              @include responsive.sm {
+              @include layout.sm {
                   display: block;
               }
       
-              @include responsive.md {
+              @include layout.md {
                   align-self: flex-start;
                   width: 70%;
               }
@@ -402,7 +391,7 @@ body::-webkit-scrollbar-thumb {
           border-radius: 18px;
           box-shadow: 11px 8px 0px 2px rgba(c.$default__black, 0.5);
       
-          @include responsive.md {
+          @include layout.md {
               display: inline-block;
               width: 10em;
               left: 75%;
@@ -424,11 +413,11 @@ body::-webkit-scrollbar-thumb {
                   font-family: f.$font-regular;
                   line-height: 2em;
       
-                  @include responsive.md {
+                  @include layout.md {
                       font-size: .9em;
                   }
       
-                  @include responsive.lg {
+                  @include layout.lg {
                       font-size: 1em;
                   }
               }
@@ -446,15 +435,15 @@ body::-webkit-scrollbar-thumb {
               margin-right: 2em;
               border-radius: 0 50px 50px 0;
       
-              @include responsive.sm {
+              @include layout.sm {
                   margin-right: 20%;
               }
       
-              @include responsive.md {
+              @include layout.md {
                   margin-right: 30%;
               }
       
-              @include responsive.lg {
+              @include layout.lg {
                   margin-right: 35%;
               }
           }
@@ -464,15 +453,15 @@ body::-webkit-scrollbar-thumb {
               margin-left: 1em;
               border-radius: 50px 0 0 50px;
       
-              @include responsive.sm {
+              @include layout.sm {
                   margin-left: 20%;
               }
       
-              @include responsive.md {
+              @include layout.md {
                   margin-left: 30%;
               }
       
-              @include responsive.lg {
+              @include layout.lg {
                   margin-left: 35%;
               }
       
@@ -516,8 +505,8 @@ body::-webkit-scrollbar-thumb {
                 fill: themed("text");
               }
 
-              // responsive layout
-              @include responsive.md {
+              // layout layout
+              @include layout.md {
                   transform: scale(1.4);
               }
 
@@ -546,8 +535,8 @@ body::-webkit-scrollbar-thumb {
                 }
               }
               
-              // responsive layout
-              @include responsive.md {
+              // layout layout
+              @include layout.md {
                   font-size: .8em;
               }
           }

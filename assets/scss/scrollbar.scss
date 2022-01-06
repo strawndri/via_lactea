@@ -1,0 +1,13 @@
+@use "../scss/helpers/colors" as c;
+
+body::-webkit-scrollbar {
+    width: 0.6em;
+    background-color: rgba(c.$light-grey, 1);
+    outline: 1px solid rgba(c.$dark-blue-02, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: c.$medium-blue-01;
+    box-shadow: inset 3px 3px 5px rgba(c.$default__black, 0.3);
+    border-radius: 10px;
+}
