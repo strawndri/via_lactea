@@ -62,6 +62,11 @@
   }
 }
 
+@mixin displacement($sign) {
+  transform: translateX(#{$sign}60vw);
+  transition: 2s all ease-in-out;
+}
+
 .app {
   
   @include themify(c.$colors){
@@ -427,6 +432,9 @@
       }
       
       .first-stanza, .third-stanza {
+
+        @include displacement("-");
+
         padding: 1em 2em 1em 1em;
         justify-content: flex-end;
         margin-right: 2em;
@@ -443,11 +451,13 @@
         @include layout.lg {
           margin-right: 35%;
         }
-
         
       }    
       
       .second-stanza, .fourth-stanza {
+
+        @include displacement("+");
+
         padding: 1em 1em 1em 2em;
         margin-left: 1em;
         border-radius: 50px 0 0 50px;
@@ -463,17 +473,12 @@
         @include layout.lg {
           margin-left: 35%;
         }
+
       }
 
       // configurations of animation 
-      .anime-item {
-        // opacity: 0;
-        transform: translate(-600px, 0px);
-      }
-  
       .anime-init {
-        // opacity: 1;
-        transform: translate(0px, 0px);
+        transform: translateX(0px);
         transition: 2s all ease-in-out;
       }
     }

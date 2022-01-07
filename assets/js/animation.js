@@ -5,14 +5,14 @@ function marginTop(idItem) {
     return itemOffset
 }
 
+
+
 $(document).ready(function() {
+
     $target = $(".anime-item")
     windowHeight = $(window).height()
     offset = windowHeight - (windowHeight / 4);
     
-    // get the size of the item to remove it of the page
-    // var $targetWidth = - parseInt($target.width());
-    // $target.css("transform", "translateX(" + ($targetWidth) + "px)")
     
     function scroll() {
     
