@@ -36,3 +36,22 @@ Pois só quem ama pode ter ouvido
 Capaz de ouvir e de entender estrelas.”
 
 Olavo Bilac
+
+# Via Láctea - Olavo Bilac
+> Status: 🚧 Work in progress
+
+## 📌 About
+
+Website about a poem that was written by Olavo Bilac in the 19th century. The main objective of this project 
+was to develop something with front-end technologies — and improve my skills.
+
+Poem is one of the best ways to express yourself, critize people/our sociaty or also talk about a simple
+object. Then, after read *"Via Láctea, soneto XIII"*, I had a lot of emotions and wanted to show it
+for others.
+
+This page have acessibility — in other words, there are some features that help people to use it, like buttons
+that change websites' mode (light or dark) and that increase/decrease the font size.
+
+### 🔗 Check some links below:
+- Project in Figma: https://www.figma.com/file/3bXuaWJT8XM3xdnBTeLhpA/Via-L%C3%A1ctea?node-id=0%3A1
+- Website: https://via-lactea.vercel.app/
