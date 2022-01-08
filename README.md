@@ -17,3 +17,10 @@ thinking to extend the access' ways, including different people.
 ### 🔗 Check some links below:
 - Project in Figma: https://www.figma.com/file/3bXuaWJT8XM3xdnBTeLhpA/Via-L%C3%A1ctea?node-id=0%3A1
 - Website: https://via-lactea.vercel.app/
+
+## 🛠️ Technologies
+
+- [x] [HTML](https://html.com/)
+- [x] [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [x] [Sass and SCSS](https://sass-lang.com/)
+- [x] [Jquery](https://jquery.com/) 
